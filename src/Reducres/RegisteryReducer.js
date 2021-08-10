@@ -16,7 +16,6 @@ const addUser = (state, action) => {
   console.log('[reducer]: state.users: ', state.users)
 
   return {
-    ...state,
     users: [...state.users, uesr]
   };
 };
