@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Goods from '../../Components/Goods/Goods';
+import GoodsContext from '../../Contexts/GoodsContext';
+import NotAvailable from '../NotAvailable';
 
 const KSocks = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+
+    const goodsContext = useContext(GoodsContext);
+    const sockses = goodsContext.goods.filter(good => good.type === 'kids').filter(good => good.category === 'socks');
+
+    if (sockses.length > 0){
+        return sockses.map(socks => <Goods src={socks.src} inventory={socks.inventory} price={socks.price} key={socks.key} /> )
+    } else {
+        return <NotAvailable />
+    }
+
 };
 
 export default KSocks;

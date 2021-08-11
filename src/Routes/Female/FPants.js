@@ -9,9 +9,9 @@ const FPants = () => {
     const pantses = goodsContext.goods.filter(good => good.type === 'female').filter(good => good.category === 'pants');
 
     if(pantses.length > 0){
-        return pantses.map(pants => <Goods src={pants.src} inventory={pants.inventory} price={pants.price} /> )
+        return pantses.map(pants => <Goods src={pants.src} inventory={pants.inventory} price={pants.price} key={pants.key} /> )
     } else {
-        // return <NotAvailable />
+        return <NotAvailable />
     }
 
 

@@ -19,18 +19,18 @@ function App() {
   
   const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
     goods: [
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'blue', type: 'female', category : 'shirt', price : 120000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'black', type:  'male', category : 'shirt', price : 240000, inventory : true, buy : 3, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'red', type:  'kids', category : 'shirt', price : 200000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'white', type:  'female', category : 'pants', price : 480000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'gray', type:  'male', category : 'pants', price : 500000, inventory : true, buy : 4, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'pink', type:  'kids', category : 'pants', price : 230000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'green', type:  'female', category : 'Tshirt', price : 100000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'purple', type:  'male', category : 'coat', price : 3000000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'brown', type:  'kids', category : 'Tshirt', price : 200000, inventory : true, buy : 2, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'orange', type:  'female', category : 'skirt', price : 600000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'yellow', type:  'male', category : 'tie', price : 320000, inventory : true, buy : 0, selected : false},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 4, color : 'yellow', type:  'kids', category : 'socks', price : 20000, inventory : true, buy : 1, selected : false}
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'blue', type: 'female', category : 'shirt', price : 120000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'black', type:  'male', category : 'shirt', price : 240000, inventory : true, buy : 3, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'red', type:  'kids', category : 'shirt', price : 200000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'white', type:  'female', category : 'pants', price : 480000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'gray', type:  'male', category : 'pants', price : 500000, inventory : true, buy : 4, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'pink', type:  'kids', category : 'pants', price : 230000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'green', type:  'female', category : 'Tshirt', price : 100000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'purple', type:  'male', category : 'coat', price : 3000000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'brown', type:  'kids', category : 'Tshirt', price : 200000, inventory : true, buy : 2, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'orange', type:  'female', category : 'skirt', price : 600000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'yellow', type:  'male', category : 'tie', price : 320000, inventory : true, buy : 0, selected : false, key : Date.now()},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 4, color : 'yellow', type:  'kids', category : 'socks', price : 20000, inventory : true, buy : 1, selected : false, key : Date.now()}
     ]
   });
   
