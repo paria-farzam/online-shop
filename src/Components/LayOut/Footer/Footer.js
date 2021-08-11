@@ -19,8 +19,8 @@ const Footer = () => {
                 <Link to='#'><i className="fab fa-telegram-plane"></i></Link>
                 <Link to='#'><i className="fab fa-facebook-f"></i></Link>
             </div>
-            <h2>ارتباط با ما</h2>
-            <h2>درباره ما</h2>
+            <Link to='/contact'>ارتباط با ما</Link>
+            <Link to='/about'>درباره ما</Link>
         </div>
     );
 };

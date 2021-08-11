@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import loadable from "@loadable/component";
 import "./App.css";
 import Header from "./LayOut/Header/Header";
@@ -39,6 +39,8 @@ function App() {
   const Women = loadable(()=> import('../Routes/Women'));
   const Men = loadable(()=> import('../Routes/Men'));
   const Kids = loadable(()=> import('../Routes/Kids'));
+  const AboutUs = loadable(()=> import('../Routes/AboutUs'));
+  const ContactUS = loadable(()=> import('../Routes/ContactUs'));
   const NotFound = loadable(()=> import('../Routes/NotFound'));
 
   return (
@@ -47,14 +49,18 @@ function App() {
         <BrowserRouter>
           <Header />
 
-          <Route path="/" exact component={Home} />
-          <Route path="/register" component={Register} />
-          <Route path='/women' component={Women} />
-          <Route path='/men' component={Men} />
-          <Route path='/kids' component={Kids} />
-          <Route path='/404' component={NotFound} />
-          <Route component={NotFound} />
-          
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/register" component={Register} />
+            <Route path='/women' component={Women} />
+            <Route path='/men' component={Men} />
+            <Route path='/kids' component={Kids} />
+            <Route path='/about' component={AboutUs} />
+            <Route path='/contact' component={ContactUS} />
+            <Route path='/404' component={NotFound} />
+            <Route component={NotFound} />
+          </Switch>
+
           <Footer />
         </BrowserRouter>
       </RegisteryContext.Provider>
