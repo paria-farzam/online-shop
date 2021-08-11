@@ -39,6 +39,7 @@ function App() {
   const Register = loadable(() => import("../Routes/Registery"));
   const AboutUs = loadable(()=> import('../Routes/AboutUs'));
   const ContactUS = loadable(()=> import('../Routes/ContactUs'));
+  const NotAvailable = loadable(()=> import('../Routes/NotAvailable'));
   const NotFound = loadable(()=> import('../Routes/NotFound'));
 
   //add loadable women components
@@ -96,6 +97,7 @@ function App() {
 
             <Route path='/about' component={AboutUs} />
             <Route path='/contact' component={ContactUS} />
+            <Route path='/notAvailable' component={NotAvailable} />
             <Route path='/404' component={NotFound} />
             <Route component={NotFound} />
           </Switch>

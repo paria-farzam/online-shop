@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Goods from '../../Components/Goods/Goods';
+import GoodsContext from '../../Contexts/GoodsContext';
+import NotAvailable from '../NotAvailable';
 
 const FSkirt = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+
+    const goodsContext = useContext(GoodsContext);
+    const skirts = goodsContext.goods.filter(good => good.type === 'female').filter(good => good.category === 'skirt');
+
+    if (skirts.length > 0){
+        return skirts.map(skirt => <Goods src={skirt.src} inventory={skirt.inventory} price={skirt.price} /> )
+    } else {
+        return <NotAvailable />
+    }
+
 };
 
 export default FSkirt;
