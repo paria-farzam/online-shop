@@ -95,7 +95,6 @@ const SignUp = () => {
         value={password}
         onChange={passwordHandler}
         placeholder="گذرواژه"
-        type="password"
         required
       />
       <p className="d-none" id="passErr">
