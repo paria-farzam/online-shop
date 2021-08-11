@@ -4,8 +4,7 @@ import GoodsContext from '../../Contexts/GoodsContext';
 const BestSeller = () => {
 
     const goodsContext = useContext(GoodsContext);
-    const goods =  goodsContext.goods;
-    // console.log('goods is ', goods)
+    const goods =  goodsContext.goods.filter(good => good.type === 'female');
     const bestSellers = goods.sort((goods, others) => (goods.buy < others.buy ? 1 : -1));
 
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Kids = () => {
+const FSkirt = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Kids = () => {
     );
 };
 
-export default Kids;
+export default FSkirt;

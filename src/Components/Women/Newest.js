@@ -4,7 +4,9 @@ import GoodsContext from '../../Contexts/GoodsContext';
 const Newest = () => {
 
     const goodsContext = useContext(GoodsContext);
-    const goods = goodsContext.goods.filter(good => good.inventory === true);
+    const womenGoods = goodsContext.goods.filter(good => good.type === 'female');
+    console.log('women goods are: ', womenGoods);
+    const goods = womenGoods.filter(good => good.inventory === true);
 
     return (
         <div>

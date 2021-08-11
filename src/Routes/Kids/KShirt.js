@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Women = () => {
+const KShirt = () => {
     return (
         <div>
-            women page
+            
         </div>
     );
 };
 
-export default Women;
+export default KShirt;
