@@ -9,7 +9,7 @@ const MTie = () => {
     const ties = goodsContext.goods.filter(good => good.type === 'male').filter(good => good.category === 'tie');
 
     if (ties.length > 0){
-        return ties.map(tie => <Goods src={tie.src} inventory={tie.inventory} price={tie.price} key={tie.key} /> )
+        return ties.map(tie => <Goods goods={tie} key={tie.key} /> )
     } else {
         return <NotAvailable />
     }

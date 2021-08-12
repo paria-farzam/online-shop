@@ -9,7 +9,7 @@ const KPants = () => {
     const pantses = goodsContext.goods.filter(good => good.type === 'kids').filter(good => good.category === 'pants');
 
     if (pantses.length > 0){
-        return pantses.map(pants => <Goods src={pants.src} inventory={pants.inventory} price={pants.price} key={pants.key} /> )
+        return pantses.map(pants => <Goods goods={pants} key={pants.key} /> )
     } else {
         return <NotAvailable />
     }

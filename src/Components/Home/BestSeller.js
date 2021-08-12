@@ -5,7 +5,6 @@ const BestSeller = () => {
 
     const goodsContext = useContext(GoodsContext);
     const goods =  goodsContext.goods;
-    // console.log('goods is ', goods)
     const bestSellers = goods.sort((goods, others) => (goods.buy < others.buy ? 1 : -1));
 
     return (

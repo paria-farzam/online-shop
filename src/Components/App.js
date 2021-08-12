@@ -19,28 +19,30 @@ function App() {
   
   const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
     goods: [
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'blue', type: 'female', category : 'shirt', price : 120000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'black', type:  'male', category : 'shirt', price : 240000, inventory : true, buy : 3, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'red', type:  'kids', category : 'shirt', price : 200000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'white', type:  'female', category : 'pants', price : 480000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'gray', type:  'male', category : 'pants', price : 500000, inventory : true, buy : 4, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'pink', type:  'kids', category : 'pants', price : 230000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'green', type:  'female', category : 'Tshirt', price : 100000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'purple', type:  'male', category : 'coat', price : 3000000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'brown', type:  'kids', category : 'Tshirt', price : 200000, inventory : true, buy : 2, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'orange', type:  'female', category : 'skirt', price : 600000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'yellow', type:  'male', category : 'tie', price : 320000, inventory : true, buy : 0, selected : false, key : Date.now()},
-      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 4, color : 'yellow', type:  'kids', category : 'socks', price : 20000, inventory : true, buy : 1, selected : false, key : Date.now()}
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'blue', type: 'female', category : 'shirt', price : 120000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 1},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'black', type:  'male', category : 'shirt', price : 240000, inventory : true, buy : 3, selected : false, goodsCounter : 0, key : 2},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'red', type:  'kids', category : 'shirt', price : 200000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 3},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'white', type:  'female', category : 'pants', price : 480000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 4},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'gray', type:  'male', category : 'pants', price : 500000, inventory : true, buy : 4, selected : false, goodsCounter : 0, key : 5},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 2, color : 'pink', type:  'kids', category : 'pants', price : 230000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 6},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'green', type:  'female', category : 'Tshirt', price : 100000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 7},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'purple', type:  'male', category : 'coat', price : 3000000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 8},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'brown', type:  'kids', category : 'Tshirt', price : 200000, inventory : true, buy : 2, selected : false, goodsCounter : 0, key : 9},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 1, color : 'orange', type:  'female', category : 'skirt', price : 600000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 10},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 3, color : 'yellow', type:  'male', category : 'tie', price : 320000, inventory : true, buy : 0, selected : false, goodsCounter : 0, key : 11},
+      {name : 'پیراهن زرد گل گلی', src : 'images/lorem.png', number : 4, color : 'yellow', type:  'kids', category : 'socks', price : 20000, inventory : true, buy : 1, selected : false, goodsCounter : 0, key : 12}
     ]
   });
   
   //add loadable components
   const Home = loadable(() => import("../Routes/Home"));
   const Register = loadable(() => import("../Routes/Registery"));
-  const AboutUs = loadable(()=> import('../Routes/AboutUs'));
-  const ContactUS = loadable(()=> import('../Routes/ContactUs'));
-  const NotAvailable = loadable(()=> import('../Routes/NotAvailable'));
-  const NotFound = loadable(()=> import('../Routes/NotFound'));
+  const AboutUs = loadable(() => import('../Routes/AboutUs'));
+  const ContactUS = loadable(() => import('../Routes/ContactUs'));
+  const ShowGoods = loadable(() => import('../Routes/ShowGoods'));
+  const NotAvailable = loadable(() => import('../Routes/NotAvailable'));
+  const NotFound = loadable(() => import('../Routes/NotFound'));
+  const Cart = loadable(() => import('../Routes/Cart'))
 
   //add loadable women components
   const Women = loadable(()=> import('../Routes/Female/Women'));
@@ -73,6 +75,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/register" component={Register} />
+            <Route path='/goods/:id' component={ShowGoods} />
+            <Route path='/cart' component={Cart} />
 
             {/* women routes */}
             <Route path='/women' component={Women} />

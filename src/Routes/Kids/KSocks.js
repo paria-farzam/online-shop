@@ -9,7 +9,7 @@ const KSocks = () => {
     const sockses = goodsContext.goods.filter(good => good.type === 'kids').filter(good => good.category === 'socks');
 
     if (sockses.length > 0){
-        return sockses.map(socks => <Goods src={socks.src} inventory={socks.inventory} price={socks.price} key={socks.key} /> )
+        return sockses.map(socks => <Goods goods={socks} key={socks.key} /> )
     } else {
         return <NotAvailable />
     }

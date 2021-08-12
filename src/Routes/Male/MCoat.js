@@ -9,7 +9,7 @@ const MCoat = () => {
     const coats = goodsContext.goods.filter(good => good.type === 'male').filter(good => good.category === 'coat');
 
     if (coats.length > 0){
-        return coats.map(coat => <Goods src={coat.src} inventory={coat.inventory} price={coat.price} key={coat.key} /> )
+        return coats.map(coat => <Goods goods={coat} key={coat.key} /> )
     } else {
         return <NotAvailable />
     }

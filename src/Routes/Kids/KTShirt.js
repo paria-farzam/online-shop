@@ -9,7 +9,7 @@ const KTShirt = () => {
     const Tshirts = goodsContext.goods.filter(good => good.type === 'kids').filter(good => good.category === 'Tshirt');
 
     if (Tshirts.length > 0){
-        return Tshirts.map(Tshirt => <Goods src={Tshirt.src} inventory={Tshirt.inventory} price={Tshirt.price} key={Tshirt.key} /> )
+        return Tshirts.map(Tshirt => <Goods goods={Tshirt} key={Tshirt.key} /> )
     } else {
         return <NotAvailable />
     }

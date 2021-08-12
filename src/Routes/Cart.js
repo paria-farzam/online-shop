@@ -10,7 +10,6 @@ const Cart = () => {
 
     const selectedGoods = goodsContext.goods.filter(goods => goods.selected === true);
     setGoods(selectedGoods);
-    // console.log('goods',goods);
 
     for (let i = 0; i < selectedGoods.length; i++) {  
         return (
@@ -23,7 +22,7 @@ const Cart = () => {
                 </div>
             </div>
         );
-    }
+    };
 
 };
 

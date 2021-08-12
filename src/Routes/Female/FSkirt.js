@@ -9,7 +9,7 @@ const FSkirt = () => {
     const skirts = goodsContext.goods.filter(good => good.type === 'female').filter(good => good.category === 'skirt');
 
     if (skirts.length > 0){
-        return skirts.map(skirt => <Goods src={skirt.src} inventory={skirt.inventory} price={skirt.price} key={skirt.key} /> )
+        return skirts.map(skirt => <Goods goods={skirt} key={skirt.key} /> )
     } else {
         return <NotAvailable />
     }
