@@ -3,21 +3,26 @@ import { Link, NavLink } from "react-router-dom";
 import "./mobile.css";
 
 const Header = () => {
+
+  //handel closing hamburger menu in 2 next functions
   const closeMenu = () => {
     const collapseBtn = document.querySelector("#collapse-btn");
     const menu = document.querySelector("#navbarNav");
-
-    // menu.classList.add('collapsing');
-    // setTimeout(() => {
-    //     menu.classList.remove('collapsing');
-    // }, 1000)
 
     menu.classList.remove("show");
     collapseBtn.classList.add("collapsed");
   };
 
+  window.addEventListener('mouseleave' && 'click', ()=>{
+    const collapseBtn = document.querySelector("#collapse-btn");
+    const menu = document.querySelector("#navbarNav");
+
+    menu.classList.remove("show");
+    collapseBtn.classList.add("collapsed");
+  });
+
   return (
-      <div>
+      <div id='header'>
         <Link to="/" className="text-center">
           Logo
         </Link>
