@@ -39,6 +39,8 @@ const Goods = (props) => {
       </div>
     </div>
   );
+
 };
+
 
 export default Goods;

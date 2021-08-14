@@ -31,6 +31,7 @@ const Home = () => {
         </Link>
       </div>
 
+      <h1>جدیدترین ها</h1>
       <Newest />
       <h1>پرفروش ترین ها</h1>
       <BestSeller />

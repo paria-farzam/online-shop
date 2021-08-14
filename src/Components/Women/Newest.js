@@ -7,16 +7,22 @@ const Newest = () => {
     const womenGoods = goodsContext.goods.filter(good => good.type === 'female');
     const goods = womenGoods.filter(good => good.inventory === true);
 
+    let newestsContainer = [];
+    let newestImage = [];
+    let newestInventory = [];
+    let newestPrice = [];
+
     for (let i = 0; i < 4; i++) {
-        return(
-            <div>
-                <img alt='lorem' src={goods[i].src} />
-                <h6>موجود</h6>
-                <h6>{goods[i].price}</h6>
-            </div>
-        )
+        
+        newestsContainer[i] = React.createElement('div', {key : goods[i].key},
+            newestImage[i] = React.createElement('img', {alt : 'lorem', src : `${goods[i].src}`}),
+            newestInventory[i] = React.createElement('h6', {} , 'موجود'),
+            newestPrice[i] = React.createElement('h6', {}, goods[i].price)
+        );
         
     }
+    
+    return newestsContainer;
 
 };
 

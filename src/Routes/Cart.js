@@ -7,29 +7,40 @@ const Cart = () => {
     (goods) => goods.selected === true
   );
 
-  console.log(selected.length)
+  
+  let cartContainer = [];
+  let cartGoodsImages = [];
+  let cartGoodsName = [];
+  let cartGoodsColor = [];
+  let cartGoodsPrice = [];
+  let totalPrice = 0;
 
-  if (selected.length > 0) {
-    for (let i = 0; i < 3; i++) {
-      return (
-        <div>
-          <img src={selected[i].src} />
-          <div>
-            <h1>{selected[i].name}</h1>
-            <h6>{selected[i].color}</h6>
-            <h4>{selected[i].price}</h4>
-          </div>
-          {console.log(`this is ${i}th time`)}
-        </div>
-      );
-    };
-  } else{
-      return <div>
+  if (selected == 0){
+    return <div>
           <h1>شما هنوز کالایی را برای خرید انتخاب نکرده اید!</h1>
       </div>
+  } else {
+    for(let i = 0; i < selected.length; i++){
+      cartContainer[i] = React.createElement('div', {key : selected[i].key}, 
+        cartGoodsImages[i] = React.createElement('img', {alt : 'lorem', src : `${selected[i].price}`}),
+        cartGoodsName[i] = React.createElement('h1', {}, `${selected[i].name}`),
+        cartGoodsColor[i] = React.createElement('h6', {}, `${selected[i].color}`),
+        cartGoodsPrice[i] = React.createElement('h4', {}, `${selected[i].price}`)
+      )
+      totalPrice += Number(selected[i].price);
+    }
   }
 
-  return null;
+  console.log(totalPrice)
+  
+  return(
+    <div>
+      {cartContainer}
+      <h1>جمع مبالغ</h1>
+      <h2>{totalPrice}</h2>
+    </div>
+  ) ;
+
 };
 
 export default Cart;
