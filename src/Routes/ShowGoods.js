@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { useParams } from "react-router";
 import GoodsContext from "../Contexts/GoodsContext";
@@ -11,26 +11,24 @@ const ShowGoods = (props) => {
 
   //handle buy button
   let counter = document.querySelector("#counter");
-  let [counter2, setCounter2] = useState(0);
 
   const buyGoods = () => {
     counter.innerHTML = Number(counter.innerHTML);
     counter.innerHTML++;
-    let plus = counter2;
-    plus++;
-    setCounter2(plus);
+    goodsContext.goodsDispatch({type : 'plus-counter', payload : {key : goods[0].key}});
   };
 
   const minesGoods = () => {
     counter.innerHTML--;
-    let mines = counter2;
-    mines--;
-    setCounter2(mines);
+    goodsContext.goodsDispatch({type : 'mines-counter', payload : {key : goods[0].key}});
   };
 
   return (
     <div>
       <img src={goods[0].src} alt="lorem" />
+      {
+        console.log(goods[0].src)
+      }
       <div>
         <div>
           <h3>نام کالا</h3>
@@ -41,10 +39,10 @@ const ShowGoods = (props) => {
           <h4>{goods[0].price}</h4>
         </div>
         <div>
-          {counter2 > 0 ? (
+          {goods[0].goodsCounter > 0 ? (
             <div>
               <button onClick={buyGoods}>+</button>
-              <p>{counter2}</p>
+              <p>{goods[0].goodsCounter}</p>
               <button onClick={minesGoods}>-</button>
             </div>
           ) : (

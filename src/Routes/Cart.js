@@ -7,40 +7,69 @@ const Cart = () => {
     (goods) => goods.selected === true
   );
 
-  
+  let counter = document.querySelector("#counter");
+
+ const plusGoods = (key) => {
+    counter.innerHTML = Number(counter.innerHTML);
+    counter.innerHTML++;
+    goodsContext.goodsDispatch({ type: "plus-counter", payload: { key: key } });
+  };
+
+  const minesGoods = (key) => {
+    counter.innerHTML--;
+    goodsContext.goodsDispatch({type : 'mines-counter', payload : {key : key}});
+  }; 
+
+  const removeSelectedGoods = (key, index) => {
+    counter.innerHTML -= selected[index].goodsCounter;
+    goodsContext.goodsDispatch({
+      type: "selected-false",
+      payload: { key: key },
+    });
+  };
+
   let cartContainer = [];
   let cartGoodsImages = [];
   let cartGoodsName = [];
   let cartGoodsColor = [];
   let cartGoodsPrice = [];
+  let counterContainer = [];
+  let plusBtn = [];
+  let counterNum = [];
+  let minesBtn = [];
+  let removeGoodsBtn = [];
   let totalPrice = 0;
 
-  if (selected == 0){
-    return <div>
-          <h1>شما هنوز کالایی را برای خرید انتخاب نکرده اید!</h1>
-      </div>
-  } else {
+  if(selected.length > 0){
     for(let i = 0; i < selected.length; i++){
       cartContainer[i] = React.createElement('div', {key : selected[i].key}, 
-        cartGoodsImages[i] = React.createElement('img', {alt : 'lorem', src : `${selected[i].price}`}),
+        cartGoodsImages[i] = React.createElement('img', {alt : 'lorem', src : `${selected[i].src}`}),
         cartGoodsName[i] = React.createElement('h1', {}, `${selected[i].name}`),
-        cartGoodsColor[i] = React.createElement('h6', {}, `${selected[i].color}`),
-        cartGoodsPrice[i] = React.createElement('h4', {}, `${selected[i].price}`)
+        cartGoodsColor[i] = React.createElement('h3', {}, `${selected[i].color}`),
+        cartGoodsPrice[i] = React.createElement('h3', {}, `${selected[i].price}`),
+        counterContainer[i] = React.createElement('div', {}, 
+          plusBtn[i] = React.createElement('button', {onClick : ()=>plusGoods(selected[i].key)}, '+'),
+          counterNum[i] = React.createElement('p', {}, `${selected[i].goodsCounter}`),
+          minesBtn[i] = React.createElement('button', {onClick : ()=>minesGoods(selected[i].key)}, '-')
+        ),
+        removeGoodsBtn[i] = React.createElement('button', {onClick : ()=>removeSelectedGoods(selected[i].key, i)}, 'حذف از سبد خرید')
       )
+
       totalPrice += Number(selected[i].price);
     }
+  } else {
+    return <div>
+      <h1>شما هنوز کالایی را برای خرید انتخاب نکرده اید!</h1>
+    </div>
   }
 
-  console.log(totalPrice)
-  
-  return(
+  return (
     <div>
       {cartContainer}
-      <h1>جمع مبالغ</h1>
-      <h2>{totalPrice}</h2>
+      <h2>جمع مبالغ</h2>
+      <h3>{totalPrice}</h3>
     </div>
-  ) ;
-
+  );
 };
 
 export default Cart;

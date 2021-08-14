@@ -4,7 +4,7 @@ import GoodsContext from "../../Contexts/GoodsContext";
 
 const Goods = (props) => {
   let counter = document.querySelector("#counter");
-  const goodsContext = useContext(GoodsContext)
+  const goodsContext = useContext(GoodsContext);
 
   const buyGoods = () => {
     counter.innerHTML = Number(counter.innerHTML);
