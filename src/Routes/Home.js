@@ -32,6 +32,7 @@ const Home = () => {
       </div>
 
       <Newest />
+      <h1>پرفروش ترین ها</h1>
       <BestSeller />
     </>
   );

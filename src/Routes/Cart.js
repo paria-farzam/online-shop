@@ -1,29 +1,35 @@
-import React from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import GoodsContext from '../Contexts/GoodsContext';
+import React, { useContext } from "react";
+import GoodsContext from "../Contexts/GoodsContext";
 
 const Cart = () => {
-    const [goods, setGoods] = useState([]);
+  const goodsContext = useContext(GoodsContext);
+  const selected = goodsContext.goods.filter(
+    (goods) => goods.selected === true
+  );
 
-    const goodsContext = useContext(GoodsContext);
+  console.log(selected.length)
 
-    const selectedGoods = goodsContext.goods.filter(goods => goods.selected === true);
-    setGoods(selectedGoods);
-
-    for (let i = 0; i < selectedGoods.length; i++) {  
-        return (
-            <div>
-                <img src={goods[i].src} />
-                <div>
-                    <h1>{goods[i].name}</h1>
-                    <h6>{goods[i].color}</h6>
-                    <h4>{goods[i].price}</h4>
-                </div>
-            </div>
-        );
+  if (selected.length > 0) {
+    for (let i = 0; i < 3; i++) {
+      return (
+        <div>
+          <img src={selected[i].src} />
+          <div>
+            <h1>{selected[i].name}</h1>
+            <h6>{selected[i].color}</h6>
+            <h4>{selected[i].price}</h4>
+          </div>
+          {console.log(`this is ${i}th time`)}
+        </div>
+      );
     };
+  } else{
+      return <div>
+          <h1>شما هنوز کالایی را برای خرید انتخاب نکرده اید!</h1>
+      </div>
+  }
 
+  return null;
 };
 
 export default Cart;

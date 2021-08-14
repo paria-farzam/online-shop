@@ -17,6 +17,7 @@ const plusCounter = (state, action) => {
 
   const changedGoods = state.goods.find(good => good.key === key);
   changedGoods.goodsCounter++;
+  changedGoods.selected = true;
   const otherGoods = state.goods.filter(good => good.key !== key);
 
   return {

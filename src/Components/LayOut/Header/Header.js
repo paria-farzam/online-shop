@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./mobile.css";
 

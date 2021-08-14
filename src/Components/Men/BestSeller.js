@@ -11,9 +11,9 @@ const BestSeller = () => {
     for (let i = 0; i < 4; i++) {
         return(
             <div>
-                <img alt='lorem' src={goods[i].src} />
+                <img alt='lorem' src={bestSellers[i].src} />
                 <h6>موجود</h6>
-                <h6>{goods[i].price}</h6>
+                <h6>{bestSellers[i].price}</h6>
             </div>
         )
         
