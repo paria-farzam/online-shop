@@ -7,6 +7,9 @@ const Men = () => {
   return (
     <div>
       <div>
+        <Link to='/'>خانه</Link>
+      </div>
+      <div>
         <Link to="/MShirt">
           <img src="images/lorem.png" alt="lorem" />
           <h6>پیراهن</h6>

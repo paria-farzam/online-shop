@@ -6,6 +6,7 @@ import Newest from "../../Components/Kids/Newest";
 const Kids = () => {
   return (
     <div>
+      <Link to='/'>خانه</Link>
       <div>
         <Link to="/KShirt">
           <img src="images/lorem.png" alt="lorem" />

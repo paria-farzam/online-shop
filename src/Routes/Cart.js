@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import GoodsContext from "../Contexts/GoodsContext";
 
 const Cart = () => {
   const goodsContext = useContext(GoodsContext);
-  const selected = goodsContext.goods.filter(
+  let selected = goodsContext.goods.filter(
     (goods) => goods.selected === true
   );
+  const [render, setRender] = useState(false);
 
   let counter = document.querySelector("#counter");
 
@@ -15,9 +16,13 @@ const Cart = () => {
     goodsContext.goodsDispatch({ type: "plus-counter", payload: { key: key } });
   };
 
-  const minesGoods = (key) => {
-    counter.innerHTML--;
-    goodsContext.goodsDispatch({type : 'mines-counter', payload : {key : key}});
+  const minesGoods = (key, index) => {
+    if(counter.innerHTML < 2){
+      removeSelectedGoods(key, index);
+    } else {
+      counter.innerHTML--;
+      goodsContext.goodsDispatch({type : 'mines-counter', payload : {key : key}});
+    }
   }; 
 
   const removeSelectedGoods = (key, index) => {
@@ -47,10 +52,10 @@ const Cart = () => {
         cartGoodsName[i] = React.createElement('h1', {}, `${selected[i].name}`),
         cartGoodsColor[i] = React.createElement('h3', {}, `${selected[i].color}`),
         cartGoodsPrice[i] = React.createElement('h3', {}, `${selected[i].price}`),
-        counterContainer[i] = React.createElement('div', {}, 
+        counterContainer[i] = React.createElement('div', {id : 'plusMines'}, 
           plusBtn[i] = React.createElement('button', {onClick : ()=>plusGoods(selected[i].key)}, '+'),
           counterNum[i] = React.createElement('p', {}, `${selected[i].goodsCounter}`),
-          minesBtn[i] = React.createElement('button', {onClick : ()=>minesGoods(selected[i].key)}, '-')
+          minesBtn[i] = React.createElement('button', {onClick : ()=>minesGoods(selected[i].key, i)}, '-')
         ),
         removeGoodsBtn[i] = React.createElement('button', {onClick : ()=>removeSelectedGoods(selected[i].key, i)}, 'حذف از سبد خرید')
       )
