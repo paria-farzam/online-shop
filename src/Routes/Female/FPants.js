@@ -1,23 +1,27 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Filter from "../../Components/Filter/Filter";
 import Goods from "../../Components/Goods/Goods";
 import GoodsContext from "../../Contexts/GoodsContext";
 import NotAvailable from "../NotAvailable";
 
-const FPants = () => {
+const FPants = (props) => {
   const goodsContext = useContext(GoodsContext);
   const pantses = goodsContext.goods
     .filter((good) => good.type === "female")
     .filter((good) => good.category === "pants");
+
+  console.log('fpants ',props)
 
   if (pantses.length > 0) {
     return (
       <div>
         <div>
           <Link to="/">خانه</Link>
-          <p>{'>'}</p> 
+          <p>{">"}</p>
           <Link to="/women">زنانه</Link>
         </div>
+        <Filter goods={pantses} />
         {pantses.map((pants) => (
           <Goods goods={pants} key={pants.key} />
         ))}
