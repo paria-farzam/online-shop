@@ -26,22 +26,22 @@ const BestSeller = () => {
     return(
         <div>
             <Link to={`/goods/${bestSellers[0].key}`}>
-                <img src={bestSellers[0].src} />
+                <img src={bestSellers[0].src} alt={bestSellers[0].key} />
                 <h3>موجود</h3>
                 <h3>{bestSellers[0].price}</h3>
             </Link>
             <Link to={`/goods/${bestSellers[1].key}`}>
-                <img src={bestSellers[1].src} />
+                <img src={bestSellers[1].src} alt={bestSellers[1].key} />
                 <h3>موجود</h3>
                 <h3>{bestSellers[1].price}</h3>
             </Link>
             <Link to={`/goods/${bestSellers[2].key}`}>
-                <img src={bestSellers[2].src} />
+                <img src={bestSellers[2].src} alt={bestSellers[2].key} />
                 <h3>موجود</h3>
                 <h3>{bestSellers[2].price}</h3>
             </Link>
             <Link to={`/goods/${bestSellers[3].key}`}>
-                <img src={bestSellers[3].src} />
+                <img src={bestSellers[3].src} alt={bestSellers[3].key} />
                 <h3>موجود</h3>
                 <h3>{bestSellers[3].price}</h3>
             </Link>

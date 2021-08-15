@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Filter = (props) => {
   let goods = props.goods;
   console.log(goods);
+  const [color, setColor] = useState('red')
 
   return (
     <div>
@@ -11,7 +12,7 @@ const Filter = (props) => {
       <div>
           
       </div>
-      <Link to='/pants' goods={goods} />
+      <Link to='/pants' color={color} />
     </div>
   );
 };
