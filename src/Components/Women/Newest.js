@@ -4,7 +4,7 @@ import GoodsContext from '../../Contexts/GoodsContext';
 const Newest = () => {
 
     const goodsContext = useContext(GoodsContext);
-    const womenGoods = goodsContext.goods.filter(good => good.type === 'female');
+    const womenGoods = goodsContext.goods.filter(good => good.type === 'female').slice().sort((a, b) => b.date > a.date ? 1: -1);
     const goods = womenGoods.filter(good => good.inventory === true);
 
     let newestsContainer = [];
