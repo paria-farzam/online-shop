@@ -9,10 +9,12 @@ const Cart = () => {
 
   let counter = document.querySelector("#counter");
 
- const plusGoods = (key) => {
+ const plusGoods = (key, number) => {
     counter.innerHTML = Number(counter.innerHTML);
-    counter.innerHTML++;
-    goodsContext.goodsDispatch({ type: "plus-counter", payload: { key: key } });
+    if(number != counter.innerHTML){
+      counter.innerHTML++;
+      goodsContext.goodsDispatch({ type: "plus-counter", payload: { key: key } });
+    }
   };
 
   const minesGoods = (key, index) => {
@@ -54,7 +56,7 @@ const Cart = () => {
         cartGoodsColor[i] = React.createElement('h3', {}, `${selected[i].color}`),
         cartGoodsPrice[i] = React.createElement('h3', {}, `${selected[i].price}`),
         counterContainer[i] = React.createElement('div', {id : 'plusMines'}, 
-          plusBtn[i] = React.createElement('button', {onClick : ()=>plusGoods(selected[i].key)}, '+'),
+          plusBtn[i] = React.createElement('button', {onClick : ()=>plusGoods(selected[i].key, selected[i].number)}, '+'),
           counterNum[i] = React.createElement('p', {}, `${selected[i].goodsCounter}`),
           minesBtn[i] = React.createElement('button', {onClick : ()=>minesGoods(selected[i].key, i)}, '-')
         ),

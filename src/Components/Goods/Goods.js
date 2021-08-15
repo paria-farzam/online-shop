@@ -6,10 +6,12 @@ const Goods = (props) => {
   let counter = document.querySelector("#counter");
   const goodsContext = useContext(GoodsContext);
 
-  const buyGoods = () => {
+  const buyGoods = (number) => {
     counter.innerHTML = Number(counter.innerHTML);
-    counter.innerHTML++;
-    goodsContext.goodsDispatch({type : 'plus-counter', payload : {key : props.goods.key}});
+    if(number != counter.innerHTML){
+      counter.innerHTML++;
+      goodsContext.goodsDispatch({type : 'plus-counter', payload : {key : props.goods.key}});
+    }
   };
 
   const minesGoods = () => {
@@ -29,12 +31,12 @@ const Goods = (props) => {
       <div>
         {props.goods.goodsCounter > 0 ? (
           <div>
-            <button onClick={buyGoods}>+</button>
+            <button onClick={()=>buyGoods(props.goods.number)}>+</button>
             <p>{props.goods.goodsCounter}</p>
             <button onClick={minesGoods}>-</button>
           </div>
         ) : (
-          <button onClick={buyGoods}>اضافه به سبد خرید</button>
+          <button onClick={()=>buyGoods(props.goods.number)}>اضافه به سبد خرید</button>
         )}
       </div>
     </div>
