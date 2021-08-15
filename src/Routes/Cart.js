@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import GoodsContext from "../Contexts/GoodsContext";
 
 const Cart = () => {
@@ -6,7 +6,6 @@ const Cart = () => {
   let selected = goodsContext.goods.filter(
     (goods) => goods.selected === true
   );
-  const [render, setRender] = useState(false);
 
   let counter = document.querySelector("#counter");
 
@@ -17,11 +16,13 @@ const Cart = () => {
   };
 
   const minesGoods = (key, index) => {
-    if(counter.innerHTML < 2){
-      removeSelectedGoods(key, index);
-    } else {
+    if(selected[index].goodsCounter > 1){
       counter.innerHTML--;
+      console.log('mines')
       goodsContext.goodsDispatch({type : 'mines-counter', payload : {key : key}});
+    } else {
+      console.log('hi')
+      removeSelectedGoods(key, index);
     }
   }; 
 

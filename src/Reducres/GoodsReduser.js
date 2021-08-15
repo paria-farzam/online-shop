@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function GoodsReducer(state, action) {
   switch (action.type) {
     case "plus-counter":
