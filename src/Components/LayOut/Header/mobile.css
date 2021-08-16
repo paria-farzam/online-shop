@@ -1,6 +1,12 @@
 .navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: none !important;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
 }
-    
+.logo {
+  color: palevioletred;
+  font-family: "Chango", cursive;
+}
+#counter {
+  font-family: "Dosis", sans-serif;
+}

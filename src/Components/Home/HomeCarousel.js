@@ -33,21 +33,21 @@ const HomeCarousel = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src="https://tcoder.ir/blog/wp-content/uploads/2019/03/lorem-ipsum-tcoder.ir_.jpg"
+            src="https://i.pinimg.com/564x/43/ca/61/43ca61172745cbbc39e10e9678ffdd0d.jpg"
             className="d-block w-100"
             alt="..."
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://tcoder.ir/blog/wp-content/uploads/2019/03/lorem-ipsum-tcoder.ir_.jpg"
+            src="https://i.pinimg.com/564x/d1/eb/98/d1eb988d2ed57921ce5955977f049cf3.jpg"
             className="d-block w-100"
             alt="..."
           />
         </div>
         <div className="carousel-item">
           <img
-            src="https://tcoder.ir/blog/wp-content/uploads/2019/03/lorem-ipsum-tcoder.ir_.jpg"
+            src="https://i.pinimg.com/564x/92/35/d3/9235d37175b0d650cecb262ffb02d8e6.jpg"
             className="d-block w-100"
             alt="..."
           />

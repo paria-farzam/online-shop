@@ -9,19 +9,19 @@ const Kids = () => {
       <Link to='/'>خانه</Link>
       <div>
         <Link to="/KShirt">
-          <img src="images/lorem.png" alt="lorem" />
+          <img src="https://i.pinimg.com/564x/7c/e8/8d/7ce88d06db6859726af1774e0c50a0f3.jpg" alt="lorem" />
           <h6>پیراهن</h6>
         </Link>
         <Link to="/KTShirt">
-          <img src="images/lorem.png" alt="lorem" />
+          <img src="https://i.pinimg.com/564x/9c/5c/bd/9c5cbd7bade1cbc997bb3381c9649f9a.jpg" alt="lorem" />
           <h6>تیشرت</h6>
         </Link>
         <Link to="/KPants">
-          <img src="images/lorem.png" alt="lorem" />
+          <img src="https://i.pinimg.com/564x/18/7d/90/187d90ff36161c001ebf6c5e3eebe32c.jpg" alt="lorem" />
           <h6>شلوار</h6>
         </Link>
         <Link to="/KSocks">
-          <img src="images/lorem.png" alt="lorem" />
+          <img src="https://i.pinimg.com/564x/7c/f5/c4/7cf5c477964e3c11628813531cf8fb89.jpg" alt="lorem" />
           <h6>جوراب</h6>
         </Link>
       </div>
