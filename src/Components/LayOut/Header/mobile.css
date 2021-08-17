@@ -1,12 +1,90 @@
-.navbar-toggler:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: none !important;
+/* header */
+header{
+  width: 100vw;
+  position: unset;
 }
+.navbar {
+  background: white !important;
+}
+hr{
+  color: rgb(68, 8, 60);
+  width: 60vw;
+  height: 1.5px !important;
+}
+
+/* menu */
+.menuContainer{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+}
+#menu{
+  width: 80vw;
+  background: white;
+  height: 100vh;
+}
+
+/* logo */
 .logo {
-  color: palevioletred;
+  color: black;
   font-family: "Chango", cursive;
 }
+.logo span{
+  color: palevioletred;
+}
+
+/* hamburger menu */
+.hamburger-btn{
+  border: none;
+  background: transparent;
+  margin-right: 10px;
+}
+/* General sidebar styles */
+.bm-menu {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  font-size: 1.15em;
+}
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #ffffff;
+}
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* navbar button */
+.search-btn {
+  background: transparent;
+  border: none;
+}
+.fa-search {
+  color: rgb(59, 56, 57);
+  font-size: 25px;
+  border: none;
+}
+.fa-shopping-bag {
+  color: rgb(59, 56, 57);
+  font-size: 30px;
+  margin-left: 1rem;
+}
+
 #counter {
   font-family: "Dosis", sans-serif;
+  font-size: 8px;
+  margin-left: -6px;
+  background: white;
+  border-radius: 50%;
+  color: black;
 }
