@@ -10,7 +10,6 @@ const Header = () => {
   // create the provider
   const MyProvider = (props) => {
     const [menuOpenState, setMenuOpenState] = useState(false);
-
     return (
       <MyContext.Provider
         value={{
@@ -24,7 +23,7 @@ const Header = () => {
     );
   };
 
-  // create a button that calls a context function to set a new open state when clicked
+  // create the buttons that calls a context function to set a new open state when clicked
   const Button = () => {
     const ctx = useContext(MyContext);
     return (
@@ -46,16 +45,16 @@ const Header = () => {
         isOpen={ctx.isMenuOpen}
         onStateChange={(state) => ctx.stateChangeHandler(state)}
       >
-        <NavLink className="nav-link menu-item" to="/register">
+        <NavLink className="nav-link menu-item" to="/register" onClick={ctx.toggleMenu} >
           ورود / ثبت نام
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/women">
+        <NavLink className="nav-link menu-item" to="/women" onClick={ctx.toggleMenu} >
           زنانه
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/men">
+        <NavLink className="nav-link menu-item" to="/men" onClick={ctx.toggleMenu} >
           مردانه
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/kids">
+        <NavLink className="nav-link menu-item" to="/kids" onClick={ctx.toggleMenu} >
           بچگانه
         </NavLink>
       </Menu>
@@ -74,9 +73,8 @@ const Header = () => {
         <hr className="mx-auto my-0" />
 
         <div className="navbar">
-
-          <div className='d-md-none'>
-            <MyProvider >
+          <div className="d-md-none">
+            <MyProvider>
               <div>
                 <Button />
                 <Navigation />
