@@ -1,11 +1,17 @@
 import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./mobile.css";
-import { fallDown as Menu } from "react-burger-menu";
-import { Spin as Hamburger } from "hamburger-react";
+import { push as Menu } from "react-burger-menu";
 
 const Header = () => {
   const MyContext = React.createContext();
+
+  const animatedIcon = (e) =>{
+    e.target.classList.add('animation');
+    setTimeout(() => {
+      e.target.classList.remove('animation')
+    }, 250);
+  }
 
   // create the provider
   const MyProvider = (props) => {
@@ -28,7 +34,8 @@ const Header = () => {
     const ctx = useContext(MyContext);
     return (
       <button className="hamburger-btn p-0" onClick={ctx.toggleMenu}>
-        <Hamburger size={31} distance="lg" color="rgb(59, 56, 57)" rounded />
+        {/* <Hamburger size={31} distance="lg" color="rgb(59, 56, 57)" rounded /> */}
+        <i className="fas fa-bars" onClick={animatedIcon}></i>
       </button>
     );
   };
@@ -44,17 +51,21 @@ const Header = () => {
         customBurgerIcon={false}
         isOpen={ctx.isMenuOpen}
         onStateChange={(state) => ctx.stateChangeHandler(state)}
+        className='shadow-lg'
       >
-        <NavLink className="nav-link menu-item" to="/register" onClick={ctx.toggleMenu} >
-          ورود / ثبت نام
+        <NavLink className="menu-item text-decoration-none" to="/register" onClick={ctx.toggleMenu} >
+          <span><strong>ورود / ثبت نام</strong></span>
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/women" onClick={ctx.toggleMenu} >
+        <NavLink className="menu-item text-decoration-none text-black-50" to="/" exact onClick={ctx.toggleMenu} >
+          <strong>خانه</strong>
+        </NavLink>
+        <NavLink className="menu-item text-decoration-none" to="/women" onClick={ctx.toggleMenu} >
           زنانه
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/men" onClick={ctx.toggleMenu} >
+        <NavLink className="menu-item text-decoration-none" to="/men" onClick={ctx.toggleMenu} >
           مردانه
         </NavLink>
-        <NavLink className="nav-link menu-item" to="/kids" onClick={ctx.toggleMenu} >
+        <NavLink className="menu-item text-decoration-none" to="/kids" onClick={ctx.toggleMenu} >
           بچگانه
         </NavLink>
       </Menu>
