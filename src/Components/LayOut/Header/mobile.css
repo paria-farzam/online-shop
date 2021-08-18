@@ -35,8 +35,8 @@ hr{
 }
 
 /* hamburger menu */
-.fa-bars{
-  font-size: 26px;
+.bars{
+  width: 26px;
   color: rgb(68, 8, 60);
 }
 .animation{
@@ -95,21 +95,24 @@ hr{
   background: transparent;
   border: none;
 }
-.fa-search {
+.search {
   color: rgb(59, 56, 57);
-  font-size: 25px;
+  width: 25px;
+  color: black;
   border: none;
 }
-.fa-shopping-bag {
+.shopping-bag {
   color: rgb(59, 56, 57);
-  font-size: 30px;
+  width: 30px;
+  color: black;
   margin-left: 1rem;
 }
 #counter {
   font-family: "Dosis", sans-serif;
   font-size: 8px;
   margin-left: -6px;
-  background: white;
+  /* background: gainsboro; */
+  background: pink;
   border-radius: 50%;
   color: black;
 }

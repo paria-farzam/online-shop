@@ -57,7 +57,8 @@ const Header = () => {
     return (
       <button className="hamburger-btn p-0" onClick={ctx.toggleMenu}>
         {/* <Hamburger size={31} distance="lg" color="rgb(59, 56, 57)" rounded /> */}
-        <i className="fas fa-bars" onClick={animatedIcon}></i>
+        {/* <i className="fas fa-bars" onClick={animatedIcon}></i> */}
+        <img src='./images/icons/menu.png' className='bars' onClick={animatedIcon} />
       </button>
     );
   };
@@ -169,13 +170,13 @@ const Header = () => {
 
           <div className="d-flex align-content-center">
             <button className="search-btn" onClick={toggleSearchBox}>
-              <i className="fas fa-search"></i>
+              <img src='./images/icons/search.png' className='search' />
             </button>
             <Link to="/cart">
               <p className="badge mb-0" id="counter">
                 0
               </p>
-              <i className="fas fa-shopping-bag"></i>
+              <img src='./images/icons/cart.png' className='shopping-bag' />
             </Link>
           </div>
         </div>
