@@ -105,7 +105,6 @@ hr{
   font-size: 30px;
   margin-left: 1rem;
 }
-
 #counter {
   font-family: "Dosis", sans-serif;
   font-size: 8px;
@@ -113,4 +112,10 @@ hr{
   background: white;
   border-radius: 50%;
   color: black;
+}
+
+/* search box */
+.search-box{
+  border: none;
+  width: 100vw;
 }

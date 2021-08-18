@@ -1,4 +1,5 @@
 import React from 'react';
+import './mobile.css';
 
 const HomeCarousel = () => {
     return (

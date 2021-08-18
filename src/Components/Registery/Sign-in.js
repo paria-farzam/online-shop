@@ -13,12 +13,8 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
 
   // set onChanges
-  const phoneHandler = (e) => {
-    setPhone(e.target.value);
-  };
-  const passwordHandler = (e) => {
-    setPassword(e.target.value);
-  };
+  const phoneHandler = (e) => setPhone(e.target.value);
+  const passwordHandler = (e) => setPassword(e.target.value);
 
   //onSubmit
   const SigningIn = (e) => {

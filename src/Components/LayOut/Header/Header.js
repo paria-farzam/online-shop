@@ -2,16 +2,38 @@ import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./mobile.css";
 import { push as Menu } from "react-burger-menu";
+import Search from "./Search";
 
 const Header = () => {
   const MyContext = React.createContext();
 
-  const animatedIcon = (e) =>{
-    e.target.classList.add('animation');
-    setTimeout(() => {
-      e.target.classList.remove('animation')
-    }, 250);
+  //search box
+  const [isOpen, setIsOpen] = useState(true);
+  const toggleSearchBox = () => {
+    setIsOpen(!isOpen);
+    let searchContainer = document.querySelector("#search-box-container");
+    if (isOpen) {
+      searchContainer.classList.remove("d-none");
+    } else {
+      searchContainer.classList.add("d-none");
+    }
+  };
+
+  const closeSearchBox = () => {
+    let searchContainer = document.querySelector("#search-box-container");
+    let status = searchContainer.classList.contains('d-none');
+    if(!status){
+      searchContainer.classList.add('d-none');
+    }
   }
+
+  //animated hamburger menu icon
+  const animatedIcon = (e) => {
+    e.target.classList.add("animation");
+    setTimeout(() => {
+      e.target.classList.remove("animation");
+    }, 250);
+  };
 
   // create the provider
   const MyProvider = (props) => {
@@ -51,21 +73,49 @@ const Header = () => {
         customBurgerIcon={false}
         isOpen={ctx.isMenuOpen}
         onStateChange={(state) => ctx.stateChangeHandler(state)}
-        className='shadow-lg'
+        className="shadow-lg"
       >
-        <NavLink className="menu-item text-decoration-none" to="/register" onClick={ctx.toggleMenu} >
-          <span><strong>ورود / ثبت نام</strong></span>
+        <NavLink
+          className="menu-item text-decoration-none"
+          to="/register"
+          onClick={ctx.toggleMenu}
+          onMouseDown={closeSearchBox}
+        >
+          <span>
+            <strong>ورود / ثبت نام</strong>
+          </span>
         </NavLink>
-        <NavLink className="menu-item text-decoration-none text-black-50" to="/" exact onClick={ctx.toggleMenu} >
+        <NavLink
+          className="menu-item text-decoration-none text-black-50"
+          to="/"
+          exact
+          onClick={ctx.toggleMenu}
+          onMouseDown={closeSearchBox}
+        >
           <strong>خانه</strong>
         </NavLink>
-        <NavLink className="menu-item text-decoration-none" to="/women" onClick={ctx.toggleMenu} >
+        <NavLink
+          className="menu-item text-decoration-none"
+          to="/women"
+          onClick={ctx.toggleMenu}
+          onMouseDown={closeSearchBox}
+        >
           زنانه
         </NavLink>
-        <NavLink className="menu-item text-decoration-none" to="/men" onClick={ctx.toggleMenu} >
+        <NavLink
+          className="menu-item text-decoration-none"
+          to="/men"
+          onClick={ctx.toggleMenu}
+          onMouseDown={closeSearchBox}
+        >
           مردانه
         </NavLink>
-        <NavLink className="menu-item text-decoration-none" to="/kids" onClick={ctx.toggleMenu} >
+        <NavLink
+          className="menu-item text-decoration-none"
+          to="/kids"
+          onClick={ctx.toggleMenu}
+          onMouseDown={closeSearchBox}
+        >
           بچگانه
         </NavLink>
       </Menu>
@@ -75,7 +125,7 @@ const Header = () => {
   return (
     <header>
       <nav id="page-wrap">
-        <Link to="/" className="text-decoration-none">
+        <Link to="/" className="text-decoration-none" onMouseDown={closeSearchBox}>
           <h1 className="text-center logo my-2">
             I<span>*</span>Sh<span>OP</span>
           </h1>
@@ -118,7 +168,7 @@ const Header = () => {
           </div>
 
           <div className="d-flex align-content-center">
-            <button className="search-btn">
+            <button className="search-btn" onClick={toggleSearchBox}>
               <i className="fas fa-search"></i>
             </button>
             <Link to="/cart">
@@ -129,6 +179,7 @@ const Header = () => {
             </Link>
           </div>
         </div>
+        <Search />
       </nav>
     </header>
   );
