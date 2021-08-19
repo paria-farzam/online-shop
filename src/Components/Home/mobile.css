@@ -4,3 +4,14 @@
     width: 100vw;
     object-fit: cover;
 }
+.homeGoods{
+  width: 100vw;
+}
+.Home-Links{
+    width: 40vw;
+    box-shadow: rgba(97, 39, 75, 0.123) 0px 3px 8px;
+    border-radius: 20px;
+}
+.homeGoods img{
+    width: 38vw;
+}

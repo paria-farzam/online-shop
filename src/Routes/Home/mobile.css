@@ -1,0 +1,21 @@
+/* home categories */
+.home-categories img{
+    width: 28vw;
+    height: 28vw;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px dotted pink;
+}
+.symbol{
+    border: 1p solid black;
+    color: pink;
+    font-size: larger;
+}
+.home-titr{
+    font-family: 'Lalezar', cursive;
+    color: rgba(26, 25, 25, 0.925);
+    width: fit-content;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background: linear-gradient(45deg,white, white, rgb(223, 173, 190), rgb(219, 144, 169), palevioletred);
+}

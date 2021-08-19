@@ -71,7 +71,7 @@ function App() {
   });
   
   //add loadable components
-  const Home = loadable(() => import("../Routes/Home"));
+  const Home = loadable(() => import("../Routes/Home/Home"));
   const Register = loadable(() => import("../Routes/Registery"));
   const AboutUs = loadable(() => import('../Routes/AboutUs'));
   const ContactUS = loadable(() => import('../Routes/ContactUs'));
