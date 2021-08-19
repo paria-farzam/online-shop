@@ -1,6 +1,6 @@
 /* carousel */
 #carouselExampleIndicators img{
-    height: 210px;
+    height: 50vw;
     width: 100vw;
     object-fit: cover;
 }

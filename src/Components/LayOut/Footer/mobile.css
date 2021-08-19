@@ -1,0 +1,28 @@
+#footer{
+    width: 100vw;
+    margin-top: 20vw;
+    background: rgba(233, 232, 232, 0.548);
+    font-family: 'Lalezar', cursive;
+}
+.about-contact{
+    color: palevioletred;
+}
+.about-contact:focus{
+    color: palevioletred;
+}
+.social-media-container{
+    background: rgba(255, 192, 203, 0.342);
+    border-radius: .5rem;
+}
+.social-media-icon{
+    font-size: 1.5rem;
+}
+.icon{
+    width: 45px;
+    background: pink;
+    padding: 7px;
+    border-radius: 60%;
+}
+.icon-container{
+    margin-left: 8px;
+}
