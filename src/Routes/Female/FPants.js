@@ -11,16 +11,21 @@ const FPants = (props) => {
     .filter((good) => good.type === "female")
     .filter((good) => good.category === "pants");
 
-
   if (pantses.length > 0) {
     return (
       <div>
-        <div className='back-links py-1 px-2 d-flex flex-row align-items-center'>
-          <Link to="/" className='text-decoration-none text-dark px-1'> خانه</Link>
-          <p className='px-1 m-0'>{' > '}</p> 
-          <Link to="/women" className='text-decoration-none text-dark px-1'> زنانه </Link>
+        <div className="back-links py-1 px-2 d-flex flex-row align-items-center">
+          <Link to="/" className="text-decoration-none text-dark px-1">
+            {" "}
+            خانه
+          </Link>
+          <p className="px-1 m-0">{" > "}</p>
+          <Link to="/women" className="text-decoration-none text-dark px-1">
+            {" "}
+            زنانه{" "}
+          </Link>
         </div>
-        
+
         {pantses.map((pants) => (
           <Goods goods={pants} key={pants.key} />
         ))}

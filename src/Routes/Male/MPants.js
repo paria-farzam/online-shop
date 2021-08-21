@@ -18,6 +18,7 @@ const MPants = () => {
           <p className='px-1 m-0'>{' > '}</p> 
           <Link to="/men" className='text-decoration-none text-dark px-1'> مردانه </Link>
         </div>
+        
         {pantses.map((pants) => (
           <Goods goods={pants} key={pants.key} />
         ))}

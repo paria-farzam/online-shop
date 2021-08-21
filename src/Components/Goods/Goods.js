@@ -1,15 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import GoodsContext from "../../Contexts/GoodsContext";
+import './mobile.css';
 
 const Goods = (props) => {
   let counter = document.querySelector("#counter");
   const goodsContext = useContext(GoodsContext);
-  const [inventory, setInventory] = useState("موجود");
-
-  if (!props.goods.inventory) {
-    setInventory("ناموجود");
-  }
 
   const buyGoods = (number) => {
     counter.innerHTML = Number(counter.innerHTML);
@@ -30,6 +26,29 @@ const Goods = (props) => {
     });
   };
 
+  const buyBtnHandler = () => {
+    if(props.goods.inventory){
+      if (props.goods.goodsCounter > 0){
+        return  <div className="d-flex justify-content-center align-items-center">
+        <button className='mines-plus p-0 fs-4 m-auto' onClick={() => buyGoods(props.goods.number)}>
+          +
+        </button>
+        <p className='my-0 mx-2 buy-counter text-center'>{props.goods.goodsCounter}</p>
+        <button className='mines-plus p-0 fs-4 m-auto' onClick={minesGoods}>-</button>
+      </div>
+      } else {
+        return <button
+        className="add-to-cart px-3 py-2"
+        onClick={() => buyGoods(props.goods.number)}
+      >
+        همینو می خوامش!
+      </button>
+      }
+    } else {
+      return <h5 className='text-muted not-available-text'>-----ناموجود-----</h5>
+    }
+  }
+
   return (
     <div className="goods-area col-12 p-0 row mx-2 my-3 pb-2">
       <Link
@@ -42,29 +61,8 @@ const Goods = (props) => {
       <div className="col-6 d-flex flex-column goods-info p-0">
         <p className="mt-4 mb-1 text-justify d-inline text-bold">{props.goods.name}</p>
         <h5 className="mb-4 fs-6"><span className='text-success fs-3'>$</span>  {props.goods.price} تومان</h5>
-        <div className="d-flex ">
-          {props.goods.inventory ? (
-            <div>
-              {props.goods.goodsCounter > 0 ? (
-                <div className="d-flex justify-content-center">
-                  <button onClick={() => buyGoods(props.goods.number)}>
-                    +
-                  </button>
-                  <p>{props.goods.goodsCounter}</p>
-                  <button onClick={minesGoods}>-</button>
-                </div>
-              ) : (
-                <button
-                  className="add-to-cart px-3 py-2"
-                  onClick={() => buyGoods(props.goods.number)}
-                >
-                  همینو می خوامش!
-                </button>
-              )}
-            </div>
-          ) : (
-            <h1>ناموجود</h1>
-          )}
+        <div className="my-auto ">
+          {buyBtnHandler()}
         </div>
       </div>
     </div>

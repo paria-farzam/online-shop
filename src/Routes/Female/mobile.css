@@ -39,29 +39,3 @@
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
 }
-
-/* each goods category */
-.goods {
-  width: 50vw;
-}
-.goods img {
-  width: 50vw;
-  height: fit-content;
-}
-.goods-area button {
-  font-size: calc((75vw - 4.5rem) / 14);
-}
-.goods-area{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-radius: 0 0 0 1.5rem;
-  width: 94vw;
-}
-.goods-info{
-  width: 43vw;
-}
-.add-to-cart{
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  border-radius: 1.5rem;
-  background: transparent;
-}
