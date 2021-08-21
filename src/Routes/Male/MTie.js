@@ -13,10 +13,10 @@ const MTie = () => {
   if (ties.length > 0) {
     return (
       <div>
-        <div>
-          <Link to="/">خانه</Link>
-          <p>{">"}</p>
-          <Link to="/men">مردانه</Link>
+        <div className='back-links py-1 px-2 d-flex flex-row align-items-center'>
+          <Link to="/" className='text-decoration-none text-dark px-1'> خانه</Link>
+          <p className='px-1 m-0'>{' > '}</p> 
+          <Link to="/men" className='text-decoration-none text-dark px-1'> مردانه </Link>
         </div>
         {ties.map((tie) => (
           <Goods goods={tie} key={tie.key} />

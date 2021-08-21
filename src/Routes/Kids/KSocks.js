@@ -13,14 +13,12 @@ const KSocks = () => {
   if (sockses.length > 0) {
     return (
       <div>
-        <div>
-          <Link to="/">خانه</Link>
-          <p>{">"}</p>
-          <Link to="/kids">بچگانه</Link>
+        <div className='back-links py-1 px-2 d-flex flex-row align-items-center'>
+          <Link to="/" className='text-decoration-none text-dark px-1'> خانه</Link>
+          <p className='px-1 m-0'>{' > '}</p> 
+          <Link to="/kids" className='text-decoration-none text-dark px-1'> بچگانه </Link>
         </div>
-        <Link to="/">خانه</Link>
-        <p>{">"}</p>
-        <Link to="/kids">بچگانه</Link>
+        
         {sockses.map((socks) => (
           <Goods goods={socks} key={socks.key} />
         ))}
