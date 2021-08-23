@@ -1,0 +1,11 @@
+.authenticating{
+    width: 90vw;
+    border-radius: .3rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.changeComponent{
+    color: rgb(223, 45, 104);
+    text-decoration: underline;
+    border: none;
+    background: transparent;
+}

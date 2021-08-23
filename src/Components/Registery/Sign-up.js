@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import RegisteryContext from "../../Contexts/RegisteryContext";
+import "./sign-up.css";
 
 const SignUp = () => {
   const registeryContext = useContext(RegisteryContext);
@@ -34,54 +35,58 @@ const SignUp = () => {
     e.preventDefault();
 
     if (phone.substring(0, 2) !== "09" || phone.length !== 11) {
-      phoneErr.classList.remove('d-none')
-    } else{
-      phoneErr.classList.add('d-none')
+      phoneErr.classList.remove("d-none");
+    } else {
+      phoneErr.classList.add("d-none");
     }
 
     if (password.length < 8) {
-      passErr.classList.remove('d-none')
-    } else{
-      passErr.classList.add('d-none')
+      passErr.classList.remove("d-none");
+    } else {
+      passErr.classList.add("d-none");
     }
 
     if (password !== repeatPass) {
-      rePassErr.classList.remove('d-none')
-    } else{
-      rePassErr.classList.add('d-none')
+      rePassErr.classList.remove("d-none");
+    } else {
+      rePassErr.classList.add("d-none");
     }
 
-    if(phone.substring(0, 2) === "09" && phone.length === 11 && password.length >= 8 && password === repeatPass){
-      let user = {name : userName, phoneNum : phone, pass : password};
+    if (
+      phone.substring(0, 2) === "09" &&
+      phone.length === 11 &&
+      password.length >= 8 &&
+      password === repeatPass
+    ) {
+      let user = { name: userName, phoneNum: phone, pass: password };
       registeryContext.dispatch({ type: "add-user", payload: user });
     }
-
   };
 
   return (
-    <form className="sign-up" onSubmit={SigningUp}>
-      <label>نام کاربری</label>
+    <form className="sign-up d-flex flex-column" onSubmit={SigningUp}>
+      <label className="mb-1">نام کاربری</label>
       <input
+        className="mb-3"
         value={userName}
         onChange={nameHandler}
-        placeholder="نام"
         type="text"
         required
       />
 
-      <label>جنسیت</label>
-      <select>
-        <option value="choose">انتخاب کنید</option>
-        <option value="female">خانم</option>
-        <option value="male">آقا</option>
-        <option value="other">دیگر</option>
+      <label className="mb-1">جنسیت</label>
+      <select className='mb-3'>
+        <option className='hello' value="choose">انتخاب کنید</option>
+        <option className='hello' value="female">خانم</option>
+        <option className='hello' value="male">آقا</option>
+        <option className='hello' value="other">دیگر</option>
       </select>
 
-      <label>شماره تلفن</label>
+      <label className="mb-1">شماره تلفن</label>
       <input
+        className="mb-3"
         value={phone}
         onChange={phoneHandler}
-        placeholder="۰۹۱۲۳۴۵۶۷۸۹"
         type="tel"
         required
       />
@@ -89,23 +94,23 @@ const SignUp = () => {
         شماره تلفن وارد شده صحیح نمی باشد
       </p>
 
-      <label>گذرواژه(حداقل هشت رقم)</label>
+      <label className="mb-1">گذرواژه(حداقل هشت رقم)</label>
       <input
+        className="mb-3"
         type="password"
         value={password}
         onChange={passwordHandler}
-        placeholder="گذرواژه"
         required
       />
       <p className="d-none" id="passErr">
         گذرواژه کوتاه تر از حد مجاز است
       </p>
 
-      <label>تکرار گذرواژه</label>
+      <label className="mb-1">تکرار گذرواژه</label>
       <input
+        className="mb-3"
         value={repeatPass}
         onChange={repeatPassHandler}
-        placeholder="تکرار گذرواژه"
         type="password"
         required
       />
@@ -113,7 +118,7 @@ const SignUp = () => {
         گذرواژه با تکرار آن یکسان نیست
       </p>
 
-      <button type="submit">ثبت نام</button>
+      <button className='mx-auto mb-5 px-3 py-1 mt-4' type="submit">ثبت نام</button>
     </form>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
+import { render } from 'react-dom';
 import RegisteryContext from "../../Contexts/RegisteryContext";
+import './sign-in.css';
 
 const SignIn = () => {
   const registeryContext = useContext(RegisteryContext);
@@ -34,33 +36,36 @@ const SignIn = () => {
 
         setPassword("");
         setPhone("");
+        // render('/' , document.getElementById('root'));
       }
     }
   };
 
   return (
-    <form className="sign-in" onSubmit={SigningIn}>
+    <form className="sign-in d-flex flex-column mb-5" onSubmit={SigningIn} >
+      <label className='mb-1'>شماره تلفن:</label>
       <input
+        className='mb-3'
         value={phone}
         onChange={phoneHandler}
-        placeholder="شماره تلفن"
         required
       />
       <p className="d-none" id="phoneErr">
         این شماره تلفن ثبت نشده است
       </p>
 
+      <label className='mb-1'>گذرواژه:</label>
       <input
+        className='mb-4'
         value={password}
         onChange={passwordHandler}
-        placeholder="پسورد"
         required
       />
       <p className="d-none" id="passErr">
         گذرواژه اشتباه است
       </p>
 
-      <button type="submit">ورود</button>
+      <button type="submit" className='mx-auto px-5 py-1' >ورود</button>
     </form>
   );
 };

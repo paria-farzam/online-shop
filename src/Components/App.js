@@ -14,7 +14,10 @@ import Footer from "./LayOut/Footer/Footer";
 function App() {
   // add Context and reducer
   const [state, dispatch] = useReducer(RegisteryReducer, {
-    users: []
+    users: [{name : 'پریا', phoneNum : '09159796944', pass : '1234'},
+      {name : 'حمیده', phoneNum : '09151234525', pass : '1234'},
+      {name : 'شیرین', phoneNum : '09350648585', pass : '1234'}
+    ]
   });
   
   const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
@@ -72,7 +75,7 @@ function App() {
   
   //add loadable components
   const Home = loadable(() => import("../Routes/Home/Home"));
-  const Register = loadable(() => import("../Routes/Registery"));
+  const Register = loadable(() => import("../Routes/authenticating/Registery"));
   const AboutUs = loadable(() => import('../Routes/About/AboutUs'));
   const ContactUS = loadable(() => import('../Routes/Contact/ContactUs'));
   const ShowGoods = loadable(() => import('../Routes/ShowEachGoods/ShowGoods'));
