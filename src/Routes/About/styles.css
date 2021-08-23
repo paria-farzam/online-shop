@@ -1,0 +1,14 @@
+.about-titr {
+  font-family: "Lalezar", cursive;
+  color: palevioletred;
+  font-size: calc((75vw - 4.5rem) / 7);
+}
+.about-us p ,
+.why-us p {
+    text-align: justify;
+}
+
+.why-us ul span{
+    padding-left: 1rem;
+    color: green;
+}
