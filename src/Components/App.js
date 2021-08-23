@@ -73,8 +73,8 @@ function App() {
   //add loadable components
   const Home = loadable(() => import("../Routes/Home/Home"));
   const Register = loadable(() => import("../Routes/Registery"));
-  const AboutUs = loadable(() => import('../Routes/AboutUs'));
-  const ContactUS = loadable(() => import('../Routes/ContactUs'));
+  const AboutUs = loadable(() => import('../Routes/About/AboutUs'));
+  const ContactUS = loadable(() => import('../Routes/Contact/ContactUs'));
   const ShowGoods = loadable(() => import('../Routes/ShowEachGoods/ShowGoods'));
   const NotAvailable = loadable(() => import('../Routes/NotAvailable'));
   const NotFound = loadable(() => import('../Routes/NotFound'));

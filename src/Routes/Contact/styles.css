@@ -1,0 +1,68 @@
+.contact {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: 2px solid palevioletred;
+  border-radius: 1.5rem;
+}
+.contact input {
+  border: none;
+  background: rgb(238, 237, 237);
+  height: 8vw;
+  border-radius: 0.3rem;
+}
+.contact textarea {
+  height: 30vw;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(202, 254, 142, 0.35);
+}
+.contact button {
+  width: fit-content;
+  border: none;
+  color: ghostwhite;
+  background: #8bc34a;
+  border-radius: 1rem 0.2rem 1rem 0.2rem;
+  margin-right: auto;
+}
+
+/* message was sended */
+.send-msg {
+  width: 90vw;
+}
+.show-it {
+  animation: showDoneMsg 0.2s 1;
+}
+@keyframes showDoneMsg {
+  from {
+    width: 0vw;
+    overflow: hidden;
+  }
+  to {
+    width: 90vw;
+    overflow: hidden;
+  }
+}
+.hide-it {
+  animation: hideDoneMsg 0.2s 1;
+}
+@keyframes hideDoneMsg {
+  from {
+    width: 90vw;
+    overflow: hidden;
+  }
+  to {
+    width: 0vw;
+    overflow: hidden;
+  }
+}
+.send-msg img {
+  width: 15vw;
+  height: 15vw;
+}
+.send-msg h1 {
+  background: #8bc34a;
+  color: white;
+  border-radius: 0.7rem 0.7rem 0 0.7rem;
+  height: fit-content;
+  font-size: calc((75vw - 4.5rem) / 11);
+}
