@@ -1,0 +1,54 @@
+/* main container */
+.main-container .titr {
+  font-family: "Lalezar", cursive;
+  color: palevioletred;
+  background: rgb(250, 208, 215);
+}
+
+/* each good in cart */
+.goods-img {
+  width: 40vw;
+  height: fit-content;
+}
+.goods-info-container h1 {
+    font-size: calc((75vw - 4.5rem) / 10);
+}
+.goods-info-container h3 {
+    font-size: calc((75vw - 4.5rem) / 12);
+}
+.remove-btn{
+    border: none;
+    background: rgb(247, 77, 77);
+    color: white;
+    border-radius: .3rem;
+}
+.remove-btn img{
+    width: 5vw;
+    height: fit-content;
+}
+
+/* total price and final buy btn */
+.btn-price-container{
+    width: 90vw;
+    border-right: 4px solid rgb(218, 29, 92);
+    padding-right: 1rem;
+}
+.final-buy{
+    border: none;
+    background: rgb(224, 56, 112);
+    border-radius: 1rem .2rem 1rem .2rem;
+    color: white;
+}
+
+/* cart is empty */
+.empty-card{
+    height: 40vh;
+    width: 100vw;
+}
+.empty-card h1{
+    width: 85vw;
+    border: 2px dashed rgb(26, 26, 75);
+    background: rgb(255, 216, 223);
+    text-align: justify;
+    line-height: initial;
+}

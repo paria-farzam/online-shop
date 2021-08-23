@@ -78,7 +78,7 @@ function App() {
   const ShowGoods = loadable(() => import('../Routes/ShowEachGoods/ShowGoods'));
   const NotAvailable = loadable(() => import('../Routes/NotAvailable'));
   const NotFound = loadable(() => import('../Routes/NotFound'));
-  const Cart = loadable(() => import('../Routes/Cart'))
+  const Cart = loadable(() => import('../Routes/Cart/Cart'))
 
   //add loadable women components
   const Women = loadable(()=> import('../Routes/Female/Women'));

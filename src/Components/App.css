@@ -16,3 +16,7 @@ img{
 ul{
   list-style: none;
 }
+
+.my-route{
+  /* min-height: 100vh; */
+}
