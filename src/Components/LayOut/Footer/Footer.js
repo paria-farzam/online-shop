@@ -34,19 +34,10 @@ const Footer = () => {
         </div>
 
         <div className="row social-media-container m-0 py-3 align-content-center justify-content-between">
-          <h2 className="col-6 mb-0 align-self-center">ما را دنبال کنید:</h2>
-          <div className="row icon-container col-6 justify-content-center align-content-center">
-            {/* <Link
-              className="col-4 social-media-icon text-decoration-none text-dark"
-              to="#"
-            >
-              <img
-                className="icon"
-                src="https://img.icons8.com/ios/50/000000/linkedin-2--v1.png"
-              />
-            </Link> */}
+          <h2 className="col-6 p-0 mb-0 align-self-center">ما را دنبال کنید:</h2>
+          <div className="row icon-container p-0 col-6 justify-content-center align-content-center">
             <Link
-              className="col-4 social-media-icon text-decoration-none text-dark mx-1+"
+              className="col-4 social-media-icon text-decoration-none text-dark mx-1"
               to="#"
             >
               <img
@@ -55,7 +46,7 @@ const Footer = () => {
               />
             </Link>
             <Link
-              className="col-4 social-media-icon text-decoration-none text-dark mx-1+"
+              className="col-4 social-media-icon text-decoration-none text-dark mx-1"
               to="#"
             >
               <img

@@ -1,0 +1,175 @@
+.coments {
+  width: 90vw;
+}
+.read-coments {
+  border: none !important;
+  background: rgb(224, 224, 224) !important;
+  width: 82% !important;
+}
+.read-coments:focus, .read-coments:hover, .read-coments:active{
+  box-shadow: none !important;
+  border: none;
+}
+.read-coments span {
+  font-family: "Lalezar", cursive;
+}
+.read-coments img {
+  width: 5vw;
+}
+
+/* coment list arrow icon */
+.show-list-icon {
+  animation: showComents 0.2s 1;
+  transform: rotate(-90deg);
+}
+@keyframes showComents {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-90deg);
+  }
+}
+.close-list-icon {
+  animation: closeComents 0.2s 1;
+  transform: rotate(0deg);
+}
+@keyframes closeComents {
+  from{
+    transform: rotate(-90deg);
+  }
+  to{
+    transform: rotate(0deg);
+  }
+}
+
+/* coment list animation */
+.show-form{
+  animation: showForm 0.9s 1;
+}
+@keyframes showForm {
+  from{
+    width: 0vw;
+    overflow: hidden;
+  }
+  to{
+    width: 90vw;
+    overflow: hidden;
+  }
+}
+.close-form{
+  animation: closeForm 0.2s 1;
+}
+@keyframes closeForm {
+  from{
+    height: 100vw;
+    opacity: 1;
+    overflow: hidden;
+  }
+  to{
+    height: 0vw;
+    opacity: .5;
+    overflow: hidden;
+  }
+}
+
+/* add coment icon */
+.add-coment {
+  background: rgb(43, 179, 9);
+  width: fit-content;
+  margin-right: auto;
+  border-radius: 8px;
+  border: none;
+}
+.add-coment img {
+  width: 8vw;
+}
+.each-coment{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: .5rem;
+  background: rgb(240, 240, 240);
+}
+.each-coment h1{
+  background: grey;
+  color: rgb(255, 217, 223);
+  font-size: 5vw;
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  margin-left: 1rem;
+}
+.each-coment p{
+  text-align: justify;
+}
+
+/* form styles */
+.coment-form{
+  border: 1px solid hotpink;
+  border-radius: 1.5rem;
+  font-family: 'Sahel', sans-serif;
+}
+.coment-form input{
+  border: none;
+  border-right: 5px solid rgb(43, 179, 9);
+  background: rgb(243, 243, 243);
+  border-radius: 1rem 0 0 1rem;
+}
+.coment-form textarea{
+  border: none;
+  background: rgb(232, 247, 228);
+  height: 7rem;
+  border-radius: 8px;
+}
+.coment-form button{
+  width: fit-content;
+  background: transparent;
+  border: 1px dotted hotpink;
+  background: hotpink;
+  color: white;
+  border-radius: .7rem .2rem .7rem .2rem;
+  margin-right: auto;
+}
+
+ /* send-coment alert */
+.done{
+  background: rgb(225, 252, 235);
+  border: 2px dotted rgb(43, 43, 43);
+}
+.done h1{
+  font-family: "Lalezar", cursive;
+  font-size: calc((75vw - 4.5rem) / 10);
+  width: fit-content;
+}
+.tick{
+  width: 15vw;
+  height: 15vw;
+  background: rgb(11, 184, 11);
+  border-radius: 50%;
+  border: 1px solid rgb(255, 217, 223);
+}
+.show-done{
+  animation: showDone .7s 1;
+}
+@keyframes showDone {
+  from{
+    width: 0vw;
+    opacity: .4;
+  }
+  to{
+    width: 90vw;
+    opacity: 1;
+  }
+}
+.hide-done{
+  animation: hideDone .5s 1;
+}
+@keyframes hideDone {
+  from{
+    height: fit-content;
+    opacity: 1;
+  }
+  to{
+    height: 0vw;
+    opacity: .4;
+  }
+}

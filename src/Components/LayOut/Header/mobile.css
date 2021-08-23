@@ -32,6 +32,7 @@ hr{
 }
 .logo span{
   color: palevioletred;
+  font-family: "Chango", cursive;
 }
 
 /* hamburger menu */
@@ -103,7 +104,7 @@ hr{
 }
 .shopping-bag {
   color: rgb(59, 56, 57);
-  width: 30px;
+  width: 23px;
   color: black;
   margin-left: 1rem;
 }

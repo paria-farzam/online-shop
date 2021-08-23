@@ -39,3 +39,7 @@
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
 }
+
+.font-cursive{
+  font-family: "Lalezar", cursive;
+}

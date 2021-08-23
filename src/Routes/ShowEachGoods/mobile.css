@@ -1,0 +1,54 @@
+.goods-infos {
+  width: 90vw;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.goods-infos img {
+  width: 80vw;
+}
+.buy-info {
+  width: 80vw;
+}
+.goods-name {
+  font-size: calc((75vw - 4.5rem) / 9);
+}
+.size{
+  color: rgb(219, 188, 10);
+}
+.size-lable{
+  margin-left: .5rem;
+}
+.price{
+  color: green;
+}
+
+/* buttons */
+.add-to-cart{
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  border-radius: 1.5rem;
+  background: transparent;
+  height: fit-content;
+  
+  position:relative;
+  bottom:0px;
+}
+.mines-plus-container{
+  width: 28vw;
+}
+.mines-plus{
+  background: transparent;
+  height: 8vw;
+  width: 8vw;
+  border: 2px solid palevioletred;
+  border-radius: 1.5rem;
+  color: palevioletred;
+  line-height: 1.2;
+}
+.buy-counter{
+  line-height: 1.2;
+  font-family: "Dosis", sans-serif;
+}
+.not-available-text{
+  font-size: calc((75vw - 4.5rem) / 10);
+}

@@ -32,6 +32,7 @@
   background: rgb(241, 241, 241);
   border-radius: 0 0 1rem 1rem;
   color: rgb(219, 155, 176);
+  font-family: "Lalezar", cursive;
 }
 .category img {
   width: 80vw;

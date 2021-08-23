@@ -35,6 +35,9 @@
     color: palevioletred;
     line-height: 1.2;
   }
+  .mines-plus-container{
+    width: 28vw;
+  }
   .buy-counter{
     line-height: 1.2;
     font-family: "Dosis", sans-serif;

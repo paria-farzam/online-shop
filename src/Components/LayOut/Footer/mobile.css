@@ -4,8 +4,12 @@
     background: rgba(233, 232, 232, 0.548);
     font-family: 'Lalezar', cursive;
 }
+#footer *{
+    font-family: "Lalezar", cursive;
+}
 .about-contact{
     color: palevioletred;
+    font-family: "Lalezar", cursive;
 }
 .about-contact:focus{
     color: palevioletred;
