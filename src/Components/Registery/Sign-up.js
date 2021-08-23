@@ -94,7 +94,7 @@ const SignUp = () => {
         شماره تلفن وارد شده صحیح نمی باشد
       </p>
 
-      <label className="mb-1">گذرواژه(حداقل هشت رقم)</label>
+      <label className="mb-1">گذرواژه (حداقل هشت رقم)</label>
       <input
         className="mb-3"
         type="password"
