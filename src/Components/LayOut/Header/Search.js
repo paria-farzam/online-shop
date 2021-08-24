@@ -43,10 +43,10 @@ const Search = () => {
       for (let i = 0; i < findedGoods.length; i++) {
         result[i] = React.createElement(
           "li",
-          { key: Goods[i].id },
-          findedGoods[i].name
+          { key: Goods[i].id, className : 'search-result py-2' },
+          <span>&#10070; </span>,findedGoods[i].name
         );
-        src[i] = findedGoods[0].src;
+        src[i] = findedGoods[i].src;
 
         link[i] = React.createElement("a", { href: src[i] }, result[i]);
       }
@@ -54,6 +54,8 @@ const Search = () => {
 
     setLink(link);
   };
+
+  console.log(Link)
 
   return (
     <div id="search-box-container" className="d-none">
@@ -63,11 +65,11 @@ const Search = () => {
         value={searchedText}
         onChange={filterGoods}
         autoFocus={true}
-        className="search-box d-block m-0 px-4 py-3"
+        className="search-box d-block m-0 px-4 py-2"
         placeholder="جست و جو..."
       />
 
-      <ul className="search-ul">{Link}</ul>
+      <ul className="search-ul m-0">{Link}</ul>
     </div>
   );
 };

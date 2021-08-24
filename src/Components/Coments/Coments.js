@@ -43,15 +43,14 @@ const Coments = (props) => {
 
   const addComent = (e) => {
     e.preventDefault();
-    const doneMessage = document.querySelector(".done");
     
     let coment = {key: props.goodskey, name: name, email: email, text: userComent}
-    context.comentsDispatch({type : 'add-coment', payload : coment})
     setUserComent("");
     setName("");
     setEmail("");
     showAddComentForm(false);
-
+    
+    const doneMessage = document.querySelector("#Done");
     setTimeout(() => {
       doneMessage.classList.remove("d-none");
       doneMessage.classList.add("show-done");
@@ -63,6 +62,10 @@ const Coments = (props) => {
       doneMessage.classList.remove("show-done");
       doneMessage.classList.add("d-none");
     }, 5700);
+
+    setTimeout(() => {
+      context.comentsDispatch({type : 'add-coment', payload : coment})
+    }, 5900);
   };
 
   //toggle coment list icon
@@ -173,7 +176,7 @@ const Coments = (props) => {
           ارسال دیدگاه
         </button>
       </form>
-      <div className="done mt-4 p-3 d-flex flex-row align-content-center d-none mx-auto">
+      <div id='Done' className="done mt-4 p-3 d-flex flex-row align-content-center d-none mx-auto">
         <img src={doneTick} className="tick p-1" />
         <h1 className="my-auto mx-auto">دیدگاه شما با موفقیت ارسال شد</h1>
       </div>
