@@ -10,6 +10,8 @@ import RegisteryReducer from "../Reducres/RegisteryReducer";
 import GoodsReducer from "../Reducres/GoodsReduser";
 import GoodsContext from "../Contexts/GoodsContext";
 import Footer from "./LayOut/Footer/Footer";
+import ComentsReducer from "../Reducres/ComentsReducer";
+import ComentsContext from '../Contexts/ComentsContext'
 
 function App() {
   // add Context and reducer
@@ -19,6 +21,14 @@ function App() {
       {name : 'شیرین', phoneNum : '09350648585', pass : '1234'}
     ]
   });
+
+  const [comentState, comentsDispatch] = useReducer(ComentsReducer, {
+    coments : [
+      {key: 12, name: "علی", email: "gfc@kuhk.ijn", text: "خیلی قشنگ و شیکه . جنس پارچه عالی",},
+      {key: 12, name: "اسما", email: "gfc@kuhk.ijn", text: "من سایزم مدیوم هست از جدول خودشون هم نگاه کردم همون مدیوم بودم. ولی لباس توی تنم گشاد و دراز بود!! درست مثل لباس هایی که توی بیمارستان به آدم می دن!!!!! من نمیدونم چطور از این لباس های زشت عکس میندازن که آدم فکر می کنه قشنگه!!!! من همه ی نظر ها رو هم خونده بودم خیلی ها راضی بودن!!",},
+      {key: 22, name: "ستاره", email: "gfc@kuhk.ijn", text: "سلام ببخشید سایز m یعنی چه سایزی هست آیا سایر ۴۰ هست",},
+    ]
+  })
   
   const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
     goods: [
@@ -38,10 +48,10 @@ function App() {
       {name: 'پیراهن زنانه صورتی هاوایی', src: 'https://dkstatics-public.digikala.com/digikala-products/14610f6299ae3cf9012d14803888cdd56e54d578_1595941710.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'female', category : 'shirt', number : 4, color : 'pink', size : 'M', price : 195000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 14},
       {name: 'بلوز مشکی کیکی رایکی', src: 'https://dkstatics-public.digikala.com/digikala-products/934d3bafe0376fe4ea702993a45d4478e10e48e3_1620533133.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'female', category : 'shirt', number : 3, color : 'black', size : 'L', price : 790000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 15},
       {name: 'بلوز زرد زنانه مدل گلی', src: 'https://dkstatics-public.digikala.com/digikala-products/ced376b83c53a9381bbaf030211896392e39f0da_1628007015.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'female', category : 'shirt', number : 2, color : 'yellow', size : 'XL', price : 135000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 16},
-      {name: 'ست کراوات و دستمال جیب هکس', src: 'https://dkstatics-public.digikala.com/digikala-products/112051771.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 3, color : 'gray', size : '', price : 66000, inventory : true, buy : 4, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 17},
-      {name: 'ست کراوات دستمال جیب و پاپیون', src: 'https://dkstatics-public.digikala.com/digikala-products/bf2fa7c0a626369e6f898e5d171a53ee7b6828ce_1599422501.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 2, color : 'black', size : '', price : 182000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 18},
-      {name: 'ست کراوات و دستمال جیب آبی', src: 'https://dkstatics-public.digikala.com/digikala-products/ba5e32e17a84a90364b595dacf348d9d7e8c3956_1611921046.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 4, color : 'blue', size : '', price : 95000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 19},
-      {name: 'ست کراوات دستمال فرانکو روسی', src: 'https://dkstatics-public.digikala.com/digikala-products/121539300.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 4, color : 'red', size : '', price : 179000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 20},
+      {name: 'ست کراوات و دستمال جیب هکس', src: 'https://dkstatics-public.digikala.com/digikala-products/112051771.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 3, color : 'gray', size : 'Free', price : 66000, inventory : true, buy : 4, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 17},
+      {name: 'ست کراوات دستمال جیب و پاپیون', src: 'https://dkstatics-public.digikala.com/digikala-products/bf2fa7c0a626369e6f898e5d171a53ee7b6828ce_1599422501.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 2, color : 'black', size : 'Free', price : 182000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 18},
+      {name: 'ست کراوات و دستمال جیب آبی', src: 'https://dkstatics-public.digikala.com/digikala-products/ba5e32e17a84a90364b595dacf348d9d7e8c3956_1611921046.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 4, color : 'blue', size : 'Free', price : 95000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 19},
+      {name: 'ست کراوات دستمال فرانکو روسی', src: 'https://dkstatics-public.digikala.com/digikala-products/121539300.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'tie', number : 4, color : 'red', size : 'Free', price : 179000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 20},
       {name: 'کت مردانه مشکی', src: 'https://dkstatics-public.digikala.com/digikala-products/c504877fd0c7cfdcdb27828e7e418e2dea6331be_1604471278.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'coat', number : 2, color : 'black', size : 'S', price : 278000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 21},
       {name: 'کت مردانه بادی اسپینر سفید', src: 'https://dkstatics-public.digikala.com/digikala-products/d10cfd2ea422c6215f261ac88f24ab58559d514d_1623575970.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'coat', number : 3, color : 'white', size : 'M', price : 998000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 22},
       {name: 'کت تگ مردانه ادورا', src: 'https://dkstatics-public.digikala.com/digikala-products/5897c1625b721963a7461050605d7842ce4f50c5_1607109548.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'coat', number : 4, color : 'gray', size : 'L', price : 999000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 23},
@@ -54,10 +64,10 @@ function App() {
       {name: 'پیراهن مردانه سورمه ای', src: 'https://dkstatics-public.digikala.com/digikala-products/121569631.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'shirt', number : 2, color : 'blue', size : 'M', price : 98000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 30},
       {name: 'پیراهن مردانه', src: 'https://dkstatics-public.digikala.com/digikala-products/117710456.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'shirt', number : 2, color : 'red', size : 'L', price : 136000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 31},
       {name: 'پیراهن مردانه امپریو آرمانی', src: 'https://dkstatics-public.digikala.com/digikala-products/117355806.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'male', category : 'shirt', number : 4, color : 'blue', size : 'XL', price : 7600000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 32},
-      {name: 'جوراب بچگانه باب اسفنجی', src: 'https://dkstatics-public.digikala.com/digikala-products/1667c5f75cab6d151b8b6e214597076709775e78_1620642968.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 0, color : 'pink', size : '', price : 25000, inventory : false, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 33},
-      {name: 'جوراب بچگانه طرح پاندا', src: 'https://dkstatics-public.digikala.com/digikala-products/1fb76be4d5abb058cdaad1983399249da7e12d48_1624537311.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'yellow', size : '', price : 25000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 34},
-      {name: 'جوراب بچگانه شازده کوچولو', src: 'https://dkstatics-public.digikala.com/digikala-products/64297fec62386823e7813d853e5a86b00ab23b89_1618944931.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'blue', size : '', price : 28000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 35},
-      {name: 'جوراب بچگانه آفتابگردانی', src: 'https://dkstatics-public.digikala.com/digikala-products/fd5560b1378e2e7e12e78090c493112776f63435_1613061347.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'yellow', size : '', price : 22000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 36},
+      {name: 'جوراب بچگانه باب اسفنجی', src: 'https://dkstatics-public.digikala.com/digikala-products/1667c5f75cab6d151b8b6e214597076709775e78_1620642968.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 0, color : 'pink', size : 'Free', price : 25000, inventory : false, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 33},
+      {name: 'جوراب بچگانه طرح پاندا', src: 'https://dkstatics-public.digikala.com/digikala-products/1fb76be4d5abb058cdaad1983399249da7e12d48_1624537311.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'yellow', size : 'Free', price : 25000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 34},
+      {name: 'جوراب بچگانه شازده کوچولو', src: 'https://dkstatics-public.digikala.com/digikala-products/64297fec62386823e7813d853e5a86b00ab23b89_1618944931.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'blue', size : 'Free', price : 28000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 35},
+      {name: 'جوراب بچگانه آفتابگردانی', src: 'https://dkstatics-public.digikala.com/digikala-products/fd5560b1378e2e7e12e78090c493112776f63435_1613061347.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'socks', number : 4, color : 'yellow', size : 'Free', price : 22000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 36},
       {name: 'پیراهن بچگانه راه راه', src: 'https://dkstatics-public.digikala.com/digikala-products/120791874.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'shirt', number : 3, color : 'pink', size : 'S', price : 59000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 37},
       {name: 'پیراهن بچگانه ساده', src: 'https://dkstatics-public.digikala.com/digikala-products/d772fbe42cb9a7d27b69dc91644c1dd1b63b0b24_1612444878.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'shirt', number : 0, color : 'yellow', size : 'S', price : 98000, inventory : false, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 38},
       {name: 'پیراهن بچگانه سانی', src: 'https://dkstatics-public.digikala.com/digikala-products/0a13be9773d981368de5e0778f7b054ce4c2b40c_1602946319.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'kids', category : 'shirt', number : 4, color : 'yellow', size : 'M', price : 165000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-04-16'), key : 39},
@@ -108,45 +118,47 @@ function App() {
   return (
     <GoodsContext.Provider value={{goods : goodsState.goods, goodsDispatch }}>
       <RegisteryContext.Provider value={{ users: state.users, dispatch }}>
-        <BrowserRouter>
-          <Header />
+        <ComentsContext.Provider value={{coments : comentState.coments, comentsDispatch}}>
+          <BrowserRouter>
+            <Header />
 
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/register" component={Register} />
-            <Route path='/goods/:id' component={ShowGoods} />
-            <Route path='/cart' component={Cart} />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/register" component={Register} />
+              <Route path='/goods/:id' component={ShowGoods} />
+              <Route path='/cart' component={Cart} />
 
-            {/* women routes */}
-            <Route path='/women' component={Women} />
-            <Route path='/FShirt' component={FShirt} />
-            <Route path='/FTShirt' component={FTShirt} />
-            <Route path='/FSkirt' component={FSkirt} />
-            <Route path='/FPants' component={FPants} />
+              {/* women routes */}
+              <Route path='/women' component={Women} />
+              <Route path='/FShirt' component={FShirt} />
+              <Route path='/FTShirt' component={FTShirt} />
+              <Route path='/FSkirt' component={FSkirt} />
+              <Route path='/FPants' component={FPants} />
 
-            {/* men routes */}
-            <Route path='/men' component={Men} />
-            <Route path='/MShirt' component={MShirt} />
-            <Route path='/MPants' component={MPants} />
-            <Route path='/MCoat' component={MCoat} />
-            <Route path='/MTie' component={MTie} />
+              {/* men routes */}
+              <Route path='/men' component={Men} />
+              <Route path='/MShirt' component={MShirt} />
+              <Route path='/MPants' component={MPants} />
+              <Route path='/MCoat' component={MCoat} />
+              <Route path='/MTie' component={MTie} />
 
-            {/* kids routes */}
-            <Route path='/kids' component={Kids} />
-            <Route path='/KShirt' component={KShirt} />
-            <Route path='/KTShirt' component={KTShirt} />
-            <Route path='/KPants' component={KPants} />
-            <Route path='/KSocks' component={KSocks} />
+              {/* kids routes */}
+              <Route path='/kids' component={Kids} />
+              <Route path='/KShirt' component={KShirt} />
+              <Route path='/KTShirt' component={KTShirt} />
+              <Route path='/KPants' component={KPants} />
+              <Route path='/KSocks' component={KSocks} />
 
-            <Route path='/about' component={AboutUs} />
-            <Route path='/contact' component={ContactUS} />
-            <Route path='/notAvailable' component={NotAvailable} />
-            <Route path='/404' component={NotFound} />
-            <Route component={NotFound} />
-          </Switch>
+              <Route path='/about' component={AboutUs} />
+              <Route path='/contact' component={ContactUS} />
+              <Route path='/notAvailable' component={NotAvailable} />
+              <Route path='/404' component={NotFound} />
+              <Route component={NotFound} />
+            </Switch>
 
-          <Footer />
-        </BrowserRouter>
+            <Footer />
+          </BrowserRouter>
+        </ComentsContext.Provider>
       </RegisteryContext.Provider>
     </GoodsContext.Provider>
   );

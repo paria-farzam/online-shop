@@ -1,30 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./mobile.css";
 import { Button, Collapse } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import doneTick from "./images/done.gif";
+import ComentsContext from "../../Contexts/ComentsContext";
 
 const Coments = (props) => {
-  const [coments, setComent] = useState([
-    {
-      key: props.goodskey,
-      name: "علی",
-      email: "gfc@kuhk.ijn",
-      text: "خیلی قشنگ و شیکه . جنس پارچه عالی",
-    },
-    {
-      key: props.goodskey,
-      name: "اسما",
-      email: "gfc@kuhk.ijn",
-      text: "من سایزم مدیوم هست از جدول خودشون هم نگاه کردم همون مدیوم بودم. ولی لباس توی تنم گشاد و دراز بود!! درست مثل لباس هایی که توی بیمارستان به آدم می دن!!!!! من نمیدونم چطور از این لباس های زشت عکس میندازن که آدم فکر می کنه قشنگه!!!! من همه ی نظر ها رو هم خونده بودم خیلی ها راضی بودن!!",
-    },
-    {
-      key: props.goodskey,
-      name: "ستاره",
-      email: "gfc@kuhk.ijn",
-      text: "سلام ببخشید سایز m یعنی چه سایزی هست آیا سایر ۴۰ هست",
-    },
-  ]);
+  let context = useContext(ComentsContext);
+  let coments = context.coments;
 
   //filter this goods coments
   let thisGoodsComents = coments.filter(
@@ -53,16 +36,17 @@ const Coments = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [userComent, setUserComent] = useState("");
+
   const addName = (e) => setName(e.target.value);
   const addEmail = (e) => setEmail(e.target.value);
   const addUserComent = (e) => setUserComent(e.target.value);
+
   const addComent = (e) => {
     e.preventDefault();
     const doneMessage = document.querySelector(".done");
-    setComent([
-      ...coments,
-      { key: props.goodskey, name: name, email: email, text: userComent },
-    ]);
+    
+    let coment = {key: props.goodskey, name: name, email: email, text: userComent}
+    context.comentsDispatch({type : 'add-coment', payload : coment})
     setUserComent("");
     setName("");
     setEmail("");
@@ -131,8 +115,11 @@ const Coments = (props) => {
           />
         </button>
         <Collapse in={open}>
-          <div className="col-12 coments-bar p-0">
-            {thisGoodsComents.map((coment) => (
+        <div className="col-12 coments-bar p-0">
+          {
+            thisGoodsComents.length === 0
+            ? <p className='text-muted px-2 py-3'>-  شما اولین دیدگاه را وارد کنید-</p>
+            : thisGoodsComents.map((coment) => (
               <div className="row mx-0 align-content-center each-coment my-2 p-2">
                 <h1 className="d-inline-block px-auto d-flex justify-content-center align-content-center my-3 py-auto col-1 mx-auto">
                   {coment.name.charAt(0)}
@@ -142,7 +129,8 @@ const Coments = (props) => {
                   <p className="p-1 my-2">{coment.text}</p>
                 </div>
               </div>
-            ))}
+            ))
+          }
           </div>
         </Collapse>
       </>

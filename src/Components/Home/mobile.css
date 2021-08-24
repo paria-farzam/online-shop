@@ -4,6 +4,8 @@
     width: 100vw;
     object-fit: cover;
 }
+
+/* home goods */
 .homeGoods{
   width: 100vw;
 }
@@ -14,4 +16,7 @@
 }
 .homeGoods img{
     width: 38vw;
+}
+a.col-6.p-0.row.px-2.text-decoration-none.text-muted.Home-Links.m-2.pt-1 {
+    width: 40vw;
 }
