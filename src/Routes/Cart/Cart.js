@@ -4,7 +4,10 @@ import "./styles.css";
 
 const Cart = () => {
   const goodsContext = useContext(GoodsContext);
-  let selected = goodsContext.goods.filter((goods) => goods.selected === true);
+  let selected = goodsContext.goods
+    .filter((goods) => goods.selected === true)
+    .slice()
+    .sort((a, b) => (b.key < a.key ? 1 : -1));
 
   let counter = document.querySelector("#counter");
 
@@ -148,7 +151,7 @@ const Cart = () => {
     return null;
   };
 
-  console.log(selected)
+  console.log(selected);
   return (
     <div className="main-container">
       <h1 className="p-2 titr d-flex justify-content-center">لیست خرید</h1>

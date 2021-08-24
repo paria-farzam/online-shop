@@ -14,6 +14,7 @@ const Women = () => {
       </div>
       <div className="row justify-content-center m-0">
         <Link
+          onClick={()=>window.scrollTo(0, 0)}
           className="category p-0 col-12 my-5 text-center text-decoration-none text-dark"
           to="/FShirt"
         >
@@ -24,6 +25,7 @@ const Women = () => {
           <h1 className="fs-1 py-2">پیراهن</h1>
         </Link>
         <Link
+          onClick={()=>window.scrollTo(0, 0)}
           className="category p-0 col-12 my-5 text-center text-decoration-none text-dark"
           to="/FTShirt"
         >
@@ -34,6 +36,7 @@ const Women = () => {
           <h1 className="fs-1 py-2">تیشرت</h1>
         </Link>
         <Link
+          onClick={()=>window.scrollTo(0, 0)}
           className="category p-0 col-12 my-5 text-center text-decoration-none text-dark"
           to="/FSkirt"
         >
@@ -44,6 +47,7 @@ const Women = () => {
           <h1 className="fs-1 py-2">دامن</h1>
         </Link>
         <Link
+          onClick={()=>window.scrollTo(0, 0)}
           className="category p-0 col-12 my-5 text-center text-decoration-none text-dark"
           to="/FPants"
         >

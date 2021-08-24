@@ -1,11 +1,15 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { useParams } from "react-router";
 import Coments from "../../Components/Coments/Coments";
 import GoodsContext from "../../Contexts/GoodsContext";
 import "./mobile.css";
 
 const ShowGoods = (props) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const goodsContext = useContext(GoodsContext);
   const params = useParams();
 
@@ -70,20 +74,29 @@ const ShowGoods = (props) => {
 
   return (
     <>
-    <div className="goods-infos mx-auto row justify-content-center mt-3 mb-4 p-3">
-      <img className="col-12" src={goods[0].src} alt="lorem" />
-      {console.log(goods[0].src)}
-      <div className="col-12 row mx-0 mt-5 mb-2 buy-info">
-        <h4 className="goods-name col-12 mb-4">{goods[0].name}</h4>
-        <div className='col-7'>
-        <h5 className="col-12 mb-1 p-0 size fs-6"><span className='fs-3'>&#10022;</span><span className='size-lable'>سایز</span><span>{goods[0].size}</span></h5>
-        <h5 className="col-12 p-0 price ml-auto fs-6"><span className='fs-3'>&#10022;</span>{goods[0].price} تومان</h5>
+      <div className="goods-infos mx-auto row justify-content-center mt-3 mb-4 p-3">
+        <img className="col-12" src={goods[0].src} alt="lorem" />
+        {console.log(goods[0].src)}
+        <div className="col-12 row mx-0 mt-5 mb-2 buy-info">
+          <h4 className="goods-name col-12 mb-4">{goods[0].name}</h4>
+          <div className="col-7">
+            <h5 className="col-12 mb-1 p-0 size fs-6">
+              <span className="fs-3">&#10022;</span>
+              <span className="size-lable">سایز</span>
+              <span>{goods[0].size}</span>
+            </h5>
+            <h5 className="col-12 p-0 price ml-auto fs-6">
+              <span className="fs-3">&#10022;</span>
+              {goods[0].price} تومان
+            </h5>
+          </div>
+          <div className="col-5 my-auto p-0 d-flex justify-content-center">
+            {buyBtnHandler()}
+          </div>
         </div>
-        <div className='col-5 my-auto p-0 d-flex justify-content-center'>{buyBtnHandler()}</div>
       </div>
-    </div>
 
-    <Coments goodskey={goods[0].key} />
+      <Coments goodskey={goods[0].key} />
     </>
   );
 };

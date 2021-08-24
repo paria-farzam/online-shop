@@ -9,7 +9,9 @@ const FPants = (props) => {
   const goodsContext = useContext(GoodsContext);
   const pantses = goodsContext.goods
     .filter((good) => good.type === "female")
-    .filter((good) => good.category === "pants");
+    .filter((good) => good.category === "pants")
+    .slice()
+    .sort((a, b) => (b.key < a.key ? 1 : -1));
 
   if (pantses.length > 0) {
     return (
