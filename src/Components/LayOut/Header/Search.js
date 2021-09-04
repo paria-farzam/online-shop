@@ -55,8 +55,6 @@ const Search = () => {
     setLink(link);
   };
 
-  console.log(Link)
-
   return (
     <div id="search-box-container" className="d-none">
       <hr className="w-100 text-muted m-0" />
