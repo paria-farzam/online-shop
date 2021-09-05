@@ -13,3 +13,23 @@ export const addNewUser = (user) => {
     user,
   };
 };
+
+//goods actions
+export const increaseCounter = (key) => {
+  return {
+    type: "plus-counter",
+    key,
+  };
+};
+export const decreaseCounter = (key) => {
+  return {
+    type: "mines-counter",
+    key,
+  };
+};
+export const removeItem = (key) => {
+  return {
+    type: "selected-false",
+    key,
+  };
+};

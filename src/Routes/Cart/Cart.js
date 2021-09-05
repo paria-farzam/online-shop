@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
-import GoodsContext from "../../Contexts/GoodsContext";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import {actionCreators} from '../../actionCreators';
 import "./styles.css";
 
 const Cart = () => {
-  const goodsContext = useContext(GoodsContext);
-  let selected = goodsContext.goods
+  const goods = useSelector(state => state.goods);
+  const dispatch = useDispatch();
+  const {increaseCounter, decreaseCounter, removeItem} = bindActionCreators(actionCreators, dispatch);
+
+  let selected = goods
     .filter((goods) => goods.selected === true)
     .slice()
     .sort((a, b) => (b.key < a.key ? 1 : -1));
@@ -15,21 +20,14 @@ const Cart = () => {
     counter.innerHTML = Number(counter.innerHTML);
     if (number != counter.innerHTML) {
       counter.innerHTML++;
-      goodsContext.goodsDispatch({
-        type: "plus-counter",
-        payload: { key: key },
-      });
+      increaseCounter(key);
     }
   };
 
   const minesGoods = (key, index) => {
     if (selected[index].goodsCounter > 1) {
       counter.innerHTML--;
-      console.log("mines");
-      goodsContext.goodsDispatch({
-        type: "mines-counter",
-        payload: { key: key },
-      });
+      decreaseCounter(key);
     } else {
       removeSelectedGoods(key, index);
     }
@@ -37,10 +35,7 @@ const Cart = () => {
 
   const removeSelectedGoods = (key, index) => {
     counter.innerHTML -= selected[index].goodsCounter;
-    goodsContext.goodsDispatch({
-      type: "selected-false",
-      payload: { key: key },
-    });
+    removeItem(key);
   };
 
   let cartContainer = [];
