@@ -58,8 +58,8 @@ const Goods = (props) => {
       </Link>
       <div className="col-6 d-flex flex-column goods-info p-0">
         <p className="mt-4 mb-1 text-justify d-inline text-bold">{props.goods.name}</p>
-        <h5 className='mb-1 fs-6'><span className='text-warning'><i class="fas fa-ruler-vertical mr-2"></i></span> سایز: {props.goods.size}</h5>
-        <h5 className="mb-4 fs-6"><span className='text-success fs-3'><i class="fas fa-dollar-sign"></i></span>  {props.goods.price} تومان</h5>
+        <h5 className='mb-1 fs-6'><span className='text-warning'><i className="fas fa-ruler-vertical mr-2"></i></span> سایز: {props.goods.size}</h5>
+        <h5 className="mb-4 fs-6"><span className='text-success fs-3'><i className="fas fa-dollar-sign"></i></span>  {props.goods.price} تومان</h5>
         <div className="my-auto ">
           {buyBtnHandler()}
         </div>
