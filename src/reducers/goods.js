@@ -1,7 +1,7 @@
 import { initialState } from "./initialStates/goodsInitialState";
 
 const goods = (state = initialState, action) => {
-  switch (action.key) {
+  switch (action.type) {
     case "plus-counter":
       return plusCounter(state, action);
 
@@ -20,24 +20,25 @@ export default goods;
 
 //functions
 const plusCounter = (state, action) => {
-  let key = action.key;
-  const changedGoods = state.find((good) => good.key === key);
+  const key = action.key;
+  let changedGoods = state.find((good) => good.key === key);
   changedGoods = {
-    ...changedGoods,
-    goodsCounter: changedGoods.goodsCounter++,
-    selected: true,
-  };
+      ...changedGoods,
+      goodsCounter: changedGoods.goodsCounter+1,
+      selected: true,
+    };
   //   changedGoods.goodsCounter++;
   //   changedGoods.selected = true;
+  console.log(changedGoods.selected);
   const otherGoods = state.filter((good) => good.key !== key);
   return [...otherGoods, changedGoods];
 };
 
 const minesCounter = (state, action) => {
-  let key = action.key;
+  const key = action.key;
 
-  const changedGoods = state.find((good) => good.key === key);
-  changedGoods = { ...changedGoods, goodsCounter: changedGoods.goodsCounter-- };
+  let changedGoods = state.find((good) => good.key === key);
+  changedGoods = { ...changedGoods, goodsCounter: changedGoods.goodsCounter-1};
   if (changedGoods.goodsCounter === 0) {
     changedGoods = { ...changedGoods, selected: false };
   }
@@ -49,9 +50,9 @@ const minesCounter = (state, action) => {
 };
 
 const removeCardItem = (state, action) => {
-  let key = action.key;
+  const key = action.key;
 
-  const removedItem = state.find((good) => good.key === key);
+  let removedItem = state.find((good) => good.key === key);
   removedItem = { ...removedItem, selected: false, goodsCounter: 0 };
   //   removedItem.selected = false;
   //   removedItem.goodsCounter = 0;

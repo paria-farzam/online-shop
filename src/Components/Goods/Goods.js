@@ -1,29 +1,26 @@
-import React, { useContext, useState } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import GoodsContext from "../../Contexts/GoodsContext";
+import { bindActionCreators } from "redux";
+import {actionCreators} from '../../actionCreators'
 import './mobile.css';
 
 const Goods = (props) => {
   let counter = document.querySelector("#counter");
-  const goodsContext = useContext(GoodsContext);
+  const dispatch = useDispatch();
+  const { increaseCounter, decreaseCounter } = bindActionCreators(actionCreators, dispatch)
 
   //handle + & - buttons
   const buyGoods = (number) => {
     counter.innerHTML = Number(counter.innerHTML);
     if (number != counter.innerHTML) {
       counter.innerHTML++;
-      goodsContext.goodsDispatch({
-        type: "plus-counter",
-        payload: { key: props.goods.key },
-      });
+      increaseCounter(props.goods.key);
     }
   };
   const minesGoods = () => {
     counter.innerHTML--;
-    goodsContext.goodsDispatch({
-      type: "mines-counter",
-      payload: { key: props.goods.key },
-    });
+    decreaseCounter(props.goods.key);
   };
 
   //handle buy button and goods inventory

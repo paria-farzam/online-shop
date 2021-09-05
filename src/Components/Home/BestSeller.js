@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import GoodsContext from '../../Contexts/GoodsContext';
 import './mobile.css';
 
 const BestSeller = () => {
 
-    const goodsContext = useContext(GoodsContext);
-    const goods =  goodsContext.goods;
+    const goods = useSelector(state => state.goods);
     const bestSellers = goods.filter(goods => goods.inventory === true).sort((goods, others) => (goods.buy < others.buy ? 1 : -1));
 
     // let bestsContainer = [];

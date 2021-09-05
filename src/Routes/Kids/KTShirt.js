@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Goods from "../../Components/Goods/Goods";
 import GoodsContext from "../../Contexts/GoodsContext";
 import NotAvailable from "../NotAvailable";
 
 const KTShirt = () => {
-  const goodsContext = useContext(GoodsContext);
-  const Tshirts = goodsContext.goods
+  const goods = useSelector(state => state.goods);
+  const Tshirts = goods
     .filter((good) => good.type === "kids")
     .filter((good) => good.category === "Tshirt")
     .slice()

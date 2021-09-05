@@ -1,19 +1,24 @@
 import React from "react";
-import { useContext, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import Coments from "../../Components/Coments/Coments";
-import GoodsContext from "../../Contexts/GoodsContext";
+import {actionCreators} from '../../actionCreators';
 import "./mobile.css";
+import { bindActionCreators } from "redux";
 
 const ShowGoods = (props) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  const goodsContext = useContext(GoodsContext);
+  const shopGoods = useSelector(state => state.goods);
+  const dispatch = useDispatch();
+  const {increaseCounter, decreaseCounter} = bindActionCreators(actionCreators, dispatch);
   const params = useParams();
 
-  const goods = goodsContext.goods.filter((good) => good.key == params.id);
+
+  const goods = shopGoods.filter((good) => good.key == params.id);
   //handle buy button by goods inventory
   const buyBtnHandler = () => {
     if (goods[0].inventory) {
@@ -46,7 +51,7 @@ const ShowGoods = (props) => {
       }
     } else {
       return (
-        <h5 className="text-muted not-available-text">-----ناموجود-----</h5>
+        <h5 className="text-muted not-available-text">---ناموجود---</h5>
       );
     }
   };
@@ -58,18 +63,12 @@ const ShowGoods = (props) => {
     counter.innerHTML = Number(counter.innerHTML);
     if (number != counter.innerHTML) {
       counter.innerHTML++;
-      goodsContext.goodsDispatch({
-        type: "plus-counter",
-        payload: { key: goods[0].key },
-      });
+      increaseCounter(goods[0].key);
     }
   };
   const minesGoods = () => {
     counter.innerHTML--;
-    goodsContext.goodsDispatch({
-      type: "mines-counter",
-      payload: { key: goods[0].key },
-    });
+    decreaseCounter(goods[0].key);
   };
 
   return (

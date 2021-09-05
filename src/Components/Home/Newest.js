@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import GoodsContext from '../../Contexts/GoodsContext';
 import './mobile.css';
 
 const Newest = () => {
 
-    const goodsContext = useContext(GoodsContext);
-    const newGoods = goodsContext.goods.slice().sort((a, b) => b.date > a.date ? 1: -1);
+    const allGoods = useSelector(state => state.goods);
+    const newGoods = allGoods.slice().sort((a, b) => b.date > a.date ? 1: -1);
     const goods = newGoods.filter(good => good.inventory === true);
 
     // let newestsContainer = [];

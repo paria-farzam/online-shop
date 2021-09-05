@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Goods from "../../Components/Goods/Goods";
-import GoodsContext from "../../Contexts/GoodsContext";
 import NotAvailable from "../NotAvailable";
 
 const MTie = () => {
-  const goodsContext = useContext(GoodsContext);
-  const ties = goodsContext.goods
+  const goods = useSelector(state => state.goods);
+  const ties = goods
     .filter((good) => good.type === "male")
     .filter((good) => good.category === "tie")
     .slice()
