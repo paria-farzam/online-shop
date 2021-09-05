@@ -4,33 +4,14 @@ import "./App.css";
 import Header from "./LayOut/Header/Header";
 
 //import context & reducer
-import RegisteryContext from "../Contexts/RegisteryContext";
 import { useReducer } from "react";
-import RegisteryReducer from "../Reducres/RegisteryReducer";
 import GoodsReducer from "../Reducres/GoodsReduser";
 import GoodsContext from "../Contexts/GoodsContext";
 import Footer from "./LayOut/Footer/Footer";
-import ComentsReducer from "../Reducres/ComentsReducer";
-import ComentsContext from '../Contexts/ComentsContext'
 
 function App() {
   // add Context and reducer
-  const [state, dispatch] = useReducer(RegisteryReducer, {
-    users: [{name : 'پریا', phoneNum : '09159796944', pass : '1234'},
-      {name : 'حمیده', phoneNum : '09151234525', pass : '1234'},
-      {name : 'شیرین', phoneNum : '09350648585', pass : '1234'}
-    ]
-  });
-
-  const [comentState, comentsDispatch] = useReducer(ComentsReducer, {
-    coments : [
-      {key: 12, name: "علی", email: "gfc@kuhk.ijn", text: "خیلی قشنگ و شیکه . جنس پارچه عالی",},
-      {key: 12, name: "اسما", email: "gfc@kuhk.ijn", text: "من سایزم مدیوم هست از جدول خودشون هم نگاه کردم همون مدیوم بودم. ولی لباس توی تنم گشاد و دراز بود!! درست مثل لباس هایی که توی بیمارستان به آدم می دن!!!!! من نمیدونم چطور از این لباس های زشت عکس میندازن که آدم فکر می کنه قشنگه!!!! من همه ی نظر ها رو هم خونده بودم خیلی ها راضی بودن!!",},
-      {key: 22, name: "ستاره", email: "gfc@kuhk.ijn", text: "سلام ببخشید سایز m یعنی چه سایزی هست آیا سایر ۴۰ هست",},
-    ]
-  })
-  
-  const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
+   const [goodsState, goodsDispatch] = useReducer(GoodsReducer, {
     goods: [
       {name: 'تی شرت خاکستری زنانه', src: "https://dkstatics-public.digikala.com/digikala-products/117207987.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90", type: 'female', category : 'Tshirt', number : 3, color : 'grey', size : 'M', price : 130000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-06-21'), key : 1},
       {name: 'تی شرت سفید زنانه طرح پروانه ', src: 'https://dkstatics-public.digikala.com/digikala-products/120727529.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_90', type: 'female', category : 'Tshirt', number : 2, color : 'white', size : 'S', price : 230000, inventory : true, buy : 0, selected : false, goodsCounter : 0, date : new Date('2021-06-20'), key : 2},
@@ -117,8 +98,6 @@ function App() {
   
   return (
     <GoodsContext.Provider value={{goods : goodsState.goods, goodsDispatch }}>
-      <RegisteryContext.Provider value={{ users: state.users, dispatch }}>
-        <ComentsContext.Provider value={{coments : comentState.coments, comentsDispatch}}>
           <BrowserRouter>
             <Header />
 
@@ -158,8 +137,6 @@ function App() {
 
             <Footer />
           </BrowserRouter>
-        </ComentsContext.Provider>
-      </RegisteryContext.Provider>
     </GoodsContext.Provider>
   );
 }

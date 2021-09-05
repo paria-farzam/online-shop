@@ -1,9 +1,13 @@
-import React, { useContext, useState } from "react";
-import RegisteryContext from "../../Contexts/RegisteryContext";
+import React, { useState } from "react";
+import { bindActionCreators } from "redux";
+import {actionCreators} from '../../actionCreators';
+import {useDispatch} from 'react-redux';
 import "./sign-up.css";
+import { useHistory } from "react-router";
 
 const SignUp = () => {
-  const registeryContext = useContext(RegisteryContext);
+  const dispatch = useDispatch();
+  const {addNewUser} = bindActionCreators(actionCreators, dispatch);
 
   //select err texts
   const phoneErr = document.querySelector("#phoneErr");
@@ -31,6 +35,7 @@ const SignUp = () => {
   };
 
   //onSubmit
+  const history = useHistory();
   const SigningUp = (e) => {
     e.preventDefault();
 
@@ -59,7 +64,9 @@ const SignUp = () => {
       password === repeatPass
     ) {
       let user = { name: userName, phoneNum: phone, pass: password };
-      registeryContext.dispatch({ type: "add-user", payload: user });
+      addNewUser(user);
+      history.push('/');
+      alert('با موفقیت ثبت نام شدید🌷');
     }
   };
 

@@ -6,7 +6,6 @@ const comment = (state = initialState, action) => {
       return addComent(state, action);
 
     default:
-  console.log('state',state)
       return state;
   }
 };

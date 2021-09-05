@@ -1,22 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./mobile.css";
 import { Button, Collapse } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import doneTick from "./images/done.gif";
-import ComentsContext from "../../Contexts/ComentsContext";
 import {useSelector, useDispatch} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {actionCreators} from '../../actionCreators';
 
 const Coments = (props) => {
-  let context = useContext(ComentsContext);
   let coments = useSelector(state => state.comment);
   let dispatch = useDispatch();
 
   let {addNewComment} = bindActionCreators(actionCreators, dispatch)
 
   //filter this goods coments
-  console.log('coments component',coments)
   let thisGoodsComents = coments.filter(
     (coment) => coment.key == props.goodskey
   );

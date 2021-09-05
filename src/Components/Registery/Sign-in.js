@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
-import { render } from 'react-dom';
-import RegisteryContext from "../../Contexts/RegisteryContext";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import './sign-in.css';
 
 const SignIn = () => {
-  const registeryContext = useContext(RegisteryContext);
+  //get users from state
+  const registeryContext = useSelector(state => state.authentication);
 
   //select err texts
   let phoneNumber = document.querySelector("#phoneErr");
@@ -19,10 +20,10 @@ const SignIn = () => {
   const passwordHandler = (e) => setPassword(e.target.value);
 
   //onSubmit
+  const history = useHistory();
   const SigningIn = (e) => {
     e.preventDefault();
-    const users = registeryContext.users;
-    const user = users.find((user) => user.phoneNum === phone);
+    const user = registeryContext.find((user) => user.phoneNum === phone);
 
     if (user === undefined) {
       phoneNumber.classList.remove("d-none");
@@ -34,9 +35,8 @@ const SignIn = () => {
         phoneNumber.classList.add("d-none");
         enteredPassword.classList.add("d-none");
 
-        setPassword("");
-        setPhone("");
-        // render('/' , document.getElementById('root'));
+        history.push('/');
+        alert('وارد حساب خود شدید💕');
       }
     }
   };
