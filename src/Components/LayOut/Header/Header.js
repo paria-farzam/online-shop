@@ -60,6 +60,7 @@ const Header = () => {
         {/* <i className="fas fa-bars" onClick={animatedIcon}></i> */}
         {/* <img src='./images/icons/menu.png' className='bars' onClick={animatedIcon} /> */}
         <img
+          alt='header-icon'
           src="https://img.icons8.com/windows/64/000000/menu--v1.png"
           className="bars"
           onClick={animatedIcon}
@@ -181,6 +182,7 @@ const Header = () => {
             <button className="search-btn" onClick={toggleSearchBox}>
               {/* <img src='./images/icons/search.png' className='search' /> */}
               <img
+                alt='search'
                 src="https://img.icons8.com/ios-glyphs/60/000000/search--v1.png"
                 className="search"
               />

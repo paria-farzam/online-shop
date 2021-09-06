@@ -42,7 +42,7 @@ const ContactUs = () => {
   return (
     <div className="">
       <div className="send-msg mx-auto mt-3 d-flex flex-row d-none">
-        <img src={done} className="mx-auto" />
+        <img alt='done' src={done} className="mx-auto" />
         <h1 className="py-3 px-4 d-flex justify-content-center m-auto mx-auto">
           پیام شما با موفقیت ثبت شد!
         </h1>

@@ -15,7 +15,7 @@ const Coments = (props) => {
 
   //filter this goods coments
   let thisGoodsComents = coments.filter(
-    (coment) => coment.key == props.goodskey
+    (coment) => coment.key === props.goodskey
   );
 
   //show add-coment form
@@ -68,7 +68,6 @@ const Coments = (props) => {
     }, 3700);
 
     setTimeout(() => {
-      // context.comentsDispatch({type : 'add-coment', payload : coment})
       addNewComment(coment);
     }, 4900);
   };
@@ -104,6 +103,7 @@ const Coments = (props) => {
         >
           <span className="px-2 my-auto fs-4 text-dark">نظر کاربران</span>
           <img
+            alt={thisGoodsComents.name}
             id="comentlist-icon"
             className="coment-icons my-auto"
             src="https://img.icons8.com/ios-glyphs/96/000000/chevron-left.png"
@@ -118,6 +118,7 @@ const Coments = (props) => {
           }}
         >
           <img
+            alt={thisGoodsComents.name}
             className="coment-icons"
             src="https://img.icons8.com/ios-glyphs/30/ffffff/plus-math.png"
           />
@@ -128,7 +129,7 @@ const Coments = (props) => {
             thisGoodsComents.length === 0
             ? <p className='text-muted px-2 py-3'>-  شما اولین دیدگاه را وارد کنید-</p>
             : thisGoodsComents.map((coment) => (
-              <div className="row mx-0 align-content-center each-coment my-2 p-2">
+              <div key={thisGoodsComents.indexOf(coment)} className="row mx-0 align-content-center each-coment my-2 p-2">
                 <h1 className="d-inline-block px-auto d-flex justify-content-center align-content-center my-3 py-auto col-1 mx-auto">
                   {coment.name.charAt(0)}
                 </h1>
@@ -182,7 +183,7 @@ const Coments = (props) => {
         </button>
       </form>
       <div id='Done' className="done mt-4 p-3 d-flex flex-row align-content-center d-none mx-auto">
-        <img src={doneTick} className="tick p-1" />
+        <img alt={thisGoodsComents.name} src={doneTick} className="tick p-1" />
         <h1 className="my-auto mx-auto">دیدگاه شما با موفقیت ارسال شد</h1>
       </div>
     </div>

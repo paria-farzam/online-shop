@@ -122,6 +122,7 @@ const Cart = () => {
             },
             "حذف  ",
             <img
+              alt='remove button'
               className="remove-btn"
               src="https://img.icons8.com/fluency-systems-filled/48/ffffff/delete.png"
             />

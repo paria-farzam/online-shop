@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Goods from "../../Components/Goods/Goods";
-import GoodsContext from "../../Contexts/GoodsContext";
 import NotAvailable from "../NotAvailable";
 
 const KPants = () => {

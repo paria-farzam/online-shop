@@ -9,8 +9,8 @@ const NotFound = () => {
     footer.classList.add('d-none');
   return (
     <div className='not-found d-flex align-content-center'>
-        <img src={NotFound404} className='d-none flex-row d-md-block' />
-        <img src={NotFound404mobile} className='d-md-none mt-5' />
+        <img alt='404 not found' src={NotFound404} className='d-none flex-row d-md-block' />
+        <img alt='404 not found' src={NotFound404mobile} className='d-md-none mt-5' />
     </div>
   );
 };
